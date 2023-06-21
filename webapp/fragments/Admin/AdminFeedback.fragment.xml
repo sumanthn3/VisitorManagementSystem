@@ -1,0 +1,41 @@
+<core:FragmentDefinition xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core" xmlns="sap.m"
+	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+		<Table id="AdminFeedback" inset="true" items="{ path: 'oAdminModel>/getFeedBack'}" alternateRowColors="true" >
+		<headerToolbar>
+			<OverflowToolbar>
+				<content>
+					<Title text="FeedBack From Visitors" class="TableTitle" level="H3"/>
+					<ToolbarSpacer></ToolbarSpacer>
+					
+					<Button icon="sap-icon://synchronize" tooltip="Refresh" press="onRefreshFeedBack"></Button>
+				</content>
+			</OverflowToolbar>
+		</headerToolbar>
+		<columns>
+			<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+				<Text text="{i18n>Name}"/>
+			</Column>
+			<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+				<Text text="{i18n>rating}"/>
+			</Column>
+			<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+				<Text text="{i18n>feedback}"/>
+			</Column>
+			<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+				<Text text="{i18n>dateoffeed}"/>
+			</Column>
+		
+		</columns>
+		<items>
+			<ColumnListItem >
+				<cells>
+					<Text text="{oAdminModel>visitorName}"></Text>
+					<Text text="{oAdminModel>rating}"></Text>
+					<Text text="{oAdminModel>feedback}"></Text>
+					<Text text="{oAdminModel>ratedOn}"></Text>
+						
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+</core:FragmentDefinition>

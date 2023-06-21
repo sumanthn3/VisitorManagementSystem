@@ -1,0 +1,65 @@
+<mvc:View controllerName="inc.inkthn.neo.NEO_VMS.controller.Landing" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m"
+	xmlns:f="sap.f" xmlns:card="sap.f.cards" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core" xmlns:tnt="sap.tnt">
+	<App id="app">
+		<pages >
+			<Page id="page" title=""  class="main">
+				<customHeader >
+					<Bar class="landingheader">
+						<contentLeft>
+							<Image height="100%" width="10%" src="./image/inclogo.png" class="LandingLogo sapUiMediuMarginBegin"></Image>
+						</contentLeft>
+					</Bar>
+				</customHeader>
+				<content>
+					<l:Grid defaultSpan="XL4 L4 M6 S12" class="sapUiTinyMarginTopBottom">
+						<l:content>
+							<f:Card class="cardtrans"></f:Card>
+							<f:Card class="sapUiResponsiveLayout card">
+								<f:header >
+									<card:Header title="Welcome to Incture Technologies"/>
+								</f:header>
+								<f:content >
+									<IconTabBar id="idIconTabBarNoIcons" expanded="{device>/isNoPhone}" class="sapUiResponsiveContentPadding ">
+										<items>
+											<IconTabFilter text="Login">
+												<VBox fitContainer="true" alignContent="Center">
+													<items >
+														<Label text="Enter Email" labelFor="idEmpNum" class="LandingLabelInputBox"></Label>
+														<Input id="idEmpNum" value="{oLoginModel>/eId}" class="LandingInputBox" width="80%" placeholder="Enter your Email" required="true"></Input>
+														<Label text="Enter Password" labelFor="idEmpPass" class="LandingLabelInputBox"></Label>
+														<Input id="idEmpPass" value="{oLoginModel>/password}" class="LandingInputBox" width="80%" placeholder="Password" type="Password"></Input>
+														<HBox class="LandingButton">
+															<Button type="Emphasized" text="Login" press="onPressLogin"></Button>
+															<l:VerticalLayout>
+																<core:Fragment fragmentName="inc.inkthn.neo.NEO_VMS.fragments.BusyDialog" type="XML"/>
+															</l:VerticalLayout>
+															<Button class="LandingButton" type="Critical" text="Forgot Password?" press="onPressForgot"></Button>
+														</HBox>
+													</items>
+												</VBox>
+											</IconTabFilter>
+											<IconTabFilter text="Visitor">
+												<VBox fitContainer="true" alignContent="Center">
+													<items >
+														<Label text="Enter your Pin" labelFor="idVerifyVisitor" class="LandingLabelInputBox"></Label>
+														<Input id="idVerifyVisitor" value="{oLoginModel>/visitorid}" class="LandingInputBox" width="80%" placeholder="Enter Pin"></Input>
+														<HBox class="LandingButton">
+															<Button type="Emphasized" text="Verify" press="onPressVerify"></Button>
+															<Button class="sapUiSmallMarginBegin" text="Scan" press="handleBarcodeScannerSuccess" icon="sap-icon://bar-code"/>
+															<Button class="LandingButton" type="Default" text="New Appointment" press="onNewVisitor"></Button>
+														</HBox>
+													</items>
+												</VBox>
+											</IconTabFilter>
+										</items>
+									</IconTabBar>
+								</f:content>
+							</f:Card>
+							<f:Card class="cardtrans"></f:Card>
+						</l:content>
+					</l:Grid>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

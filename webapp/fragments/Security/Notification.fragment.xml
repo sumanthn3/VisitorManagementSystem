@@ -1,0 +1,25 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout">
+	<ResponsivePopover title="Notifications" class="sapUiPopupWithPadding notifPopover" placement="Bottom">
+		<endButton>
+			<Button text="Close All" type="Back" press="onNotificationPopoverClose"/>
+		</endButton>
+		<content>
+		
+			<List items="{path: 'oSecurityModel>/Notification'}">
+				<layoutData>
+				<FlexItemData maxWidth="10%"/>
+			</layoutData>
+				<NotificationListItem
+					title="{oSecurityModel>contents}"
+					description=""
+					showCloseButton="true" unread="true" priority="None" close=".onItemClose" press=".onListItemPress"
+					authorPicture="data:image/png;base64,{oSecurityModel>image}" authorName="{oSecurityModel>nId},{oSecurityModel>name}">
+					<buttons>
+						<Button text="Accept" press=".onAcceptPress"/>
+						<Button text="Reject" press=".onRejectPress"/>
+					</buttons>
+				</NotificationListItem>
+				</List>
+			</content>
+		</ResponsivePopover>
+	</core:FragmentDefinition>

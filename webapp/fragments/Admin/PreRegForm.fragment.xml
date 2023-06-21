@@ -1,0 +1,109 @@
+<core:FragmentDefinition xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core" xmlns="sap.m">
+	<Dialog title="{i18n>ADD}" draggable="true" verticalScrolling="true" class="sapUiSizeCompact AddDialog" resizable="true"
+		contentWidth="60rem" titleAlignment="Center">
+		<content>
+			<VBox>
+				<f:SimpleForm layout="ColumnLayout" editable="true" id="idSimpleFormAddPer">
+					<f:content >
+						<Text text="Personal Details"></Text>
+						<Label text="{i18n>firstname}" required="true" />
+						<Input id="idfirstName" class="InputBox" required="true"/>
+						<Label text="{i18n>lastname}" required="true"/>
+						<Input id="idlastName" class="InputBox" required="true"/>
+						<Label text="{i18n>Email}" required="true"/>
+						<Input id="idEmail" type="Email" class="InputBox" required="true"/>
+						<Label text="{i18n>Phone}" required="true"/>
+						<Input id="idPhone" type="Number" class="InputBox" required="true"/>
+						<Label text="{i18n>Identity}"/>
+						<ComboBox id="idPerID" selectedKey="{oViewModel>/sSelect}" items="{oViewModel>/list}" class="InputBox">
+							<core:Item text="{oViewModel>Identity}" key="{oViewModel>Identity}"></core:Item>
+						</ComboBox>
+						<Label text="{i18n>IDNUMBER}"/>
+						<Input id="idPerIDNum" type="Number" class="InputBox" />
+						<Label text="{i18n>Parking}" required="true"/>
+						<ComboBox id="idPerPark" selectedKey="{oAdminModel>/sParking}" items="{oViewModel>/list1}">
+						<core:Item text="{oViewModel>ParkingType}" key="{oViewModel>Parkingid}"  ></core:Item>
+						</ComboBox>
+					</f:content>
+				</f:SimpleForm>
+			</VBox>
+			<VBox>
+				<f:SimpleForm layout="ColumnLayout" editable="true" id="idSimpleFormAddMeet">
+					<f:content>
+						<Text text="Meeting Details"></Text>
+						<Label text="{i18n>Purpose}"/>
+						<Input id="idVisPurp" class="MeetInputBox" required="true"/>
+						<Label text="{i18n>Organisation}"/>
+						<Input id="idVisOrg" class="MeetInputBox" required="true"/>
+						<Label text="{i18n>meetDate}" required="true"/>
+						<DatePicker valueFormat="MMM dd, yyyy" id="idMeetDate" minDate="{oAdminModel>/meetingDate}" class="MeetInputBox" required="true"/>
+						<Label text="{i18n>Start time}"/>
+						<TimePicker id="idMeetStart" valueFormat="HH:mm:ss" displayFormat="HH:mm:ss" change="handleChange" class="MeetInputBox"/>
+						<Label text="{i18n>End Time}"/>
+						<TimePicker id="idMeetEnd" valueFormat="HH:mm:ss" displayFormat="HH:mm:ss" change="handleChange" class="MeetInputBox"/>
+					</f:content>
+				</f:SimpleForm>
+			</VBox>
+			<Table id="idVisitor" inset="true" items="{path: 'oPreRegForm>/visitor'}" visible="{oViewModel>/AddVisVisibility}" alternateRowColors="true" >
+				<headerToolbar>
+					<OverflowToolbar>
+						<content>
+							<Title text="Add Visitor" level="H6"/>
+							<ToolbarSpacer></ToolbarSpacer>
+							<Button icon="sap-icon://add-employee" press="addVis"></Button>
+						</content>
+					</OverflowToolbar>
+				</headerToolbar>
+				<columns>
+					<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+						<Text text="{i18n>firstname}"/>
+					</Column>
+					<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+						<Text text="{i18n>lastname}"/>
+					</Column>
+					<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+						<Text text="{i18n>Email}"/>
+					</Column>
+					<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+						<Text text="{i18n>Phone}"/>
+					</Column>
+					<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+						<Text text="{i18n>idIDType}"/>
+					</Column>
+					<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+						<Text text="{i18n>IDNUMBER}"/>
+					</Column>
+					<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+						<Text text="{i18n>park}"/>
+					</Column>
+					<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+						<Text text="{i18n>action}"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem >
+						<cells>
+							<Input id="idfname" value="{oPreRegForm>fName}"></Input>
+							<Input id="idlname" value="{oPreRegForm>lName}"></Input>
+							<Input id="idEmail1" value="{oPreRegForm>emailId}"></Input>
+							<Input id="idPhone1" value="{oPreRegForm>phoneNo}"></Input>
+							<ComboBox id="idPer" selectedKey="{oPreRegForm>proofType}" items="{oViewModel>/list}" class="InputBox">
+							<core:Item text="{oViewModel>Identity}" key="{oViewModel>Identity}"></core:Item>
+					    	</ComboBox>
+							<Input id="idPerIDNum1" value="{oPreRegForm>idNo}"></Input>
+							<ComboBox id="idpark" selectedKey="{oPreRegForm>parkingStatus}" items="{oViewModel>/list1}">
+							<core:Item text="{oViewModel>ParkingType}" key="{oViewModel>Parkingid}"></core:Item>
+							</ComboBox>
+							<Button icon="sap-icon://delete" type="Reject" press="onVisCancel"></Button>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+		<buttons>
+		<Button text="{i18n>ADD}" type="Emphasized" press="onAddVisible"/>
+		<Button text="{i18n>next}" type="Accept" press="onNext"/>
+		<Button text="{i18n>Cancel}" type="Reject" press="onCancel"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

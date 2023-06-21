@@ -1,0 +1,198 @@
+{
+	"_version": "1.12.0",
+	"sap.app": {
+		"id": "inc.inkthn.neo.NEO_VMS",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"sourceTemplate": {
+			"id": "ui5template.basicSAPUI5ApplicationProject",
+			"version": "1.40.12"
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		}
+	},
+	"sap.ui5": {
+		"flexEnabled": false,
+		"rootView": {
+			"viewName": "inc.inkthn.neo.NEO_VMS.view.Landing",
+			"type": "XML",
+			"async": true,
+			"id": "Landing"
+		},
+		"dependencies": {
+			"minUI5Version": "1.65.6",
+			"libs": {
+				"sap.ui.layout": {},
+				"sap.ui.core": {},
+				"sap.m": {}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "inc.inkthn.neo.NEO_VMS.i18n.i18n"
+				}
+			},
+			"oGlobalModel": {
+				"type": "sap.ui.model.json.JSONModel",
+				"settings": {
+					"defaultBindingMode": "TwoWay"
+				}
+			},
+			"oPreRegForm": {
+				"type": "sap.ui.model.json.JSONModel",
+				"settings": {
+					"defaultBindingMode": "TwoWay"
+				}
+			},
+			"oHostModel": {
+				"type": "sap.ui.model.json.JSONModel",
+				"settings": {
+					"defaultBindingMode": "TwoWay"
+				}
+			},
+			"oAdminModel": {
+				"type": "sap.ui.model.json.JSONModel",
+				"settings": {
+					"defaultBindingMode": "TwoWay"
+				}
+			},
+			"oLoginModel": {
+				"type": "sap.ui.model.json.JSONModel",
+				"settings": {
+					"defaultBindingMode": "TwoWay"
+				}
+			},
+			"oVisitorModel": {
+				"type": "sap.ui.model.json.JSONModel",
+				"settings": {
+					"defaultBindingMode": "OneWay"
+				}
+			},
+			"oSecurityModel": {
+				"type": "sap.ui.model.json.JSONModel",
+				"settings": {
+					"defaultBindingMode": "OneWay"
+				}
+			}
+		},
+		"resources": {
+			"css": [
+				{
+					"uri": "css/style.css"
+				}
+			]
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"async": true,
+				"viewPath": "inc.inkthn.neo.NEO_VMS.view",
+				"controlAggregation": "pages",
+				"controlId": "app",
+				"clearControlAggregation": false
+			},
+			"routes": [
+				{
+					"name": "RouteLanding",
+					"pattern": "RouteLanding",
+					"target": [
+						"TargetLanding"
+					]
+				},
+				{
+					"name": "RouteHost",
+					"pattern": "RouteHost",
+					"target": [
+						"TargetHost"
+					]
+				},
+				{
+					"name": "RouteAdmin",
+					"pattern": "RouteAdmin",
+					"target": [
+						"TargetAdmin"
+					]
+				},
+				{
+					"name": "RouteSecurity",
+					"pattern": "RouteSecurity",
+					"target": [
+						"TargetSecurity"
+					]
+				},
+				{
+					"name": "RouteNewVisitor",
+					"pattern": "RouteNewVisitor",
+					"target": [
+						"TargetNewVisitor"
+					]
+				},
+				{
+					"name": "RouteExistingVisitor",
+					"pattern": "RouteExistingVisitor",
+					"target": [
+						"TargetExistingVisitor"
+					]
+				}
+			],
+			"targets": {
+				"TargetLanding": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearControlAggregation": false,
+					"viewName": "Landing"
+				},
+				"TargetHost": {
+					"viewType": "XML",
+					"viewName": "Host"
+				},
+				"TargetAdmin": {
+					"viewType": "XML",
+					"viewName": "Admin"
+				},
+				"TargetSecurity": {
+					"viewType": "XML",
+					"viewName": "Security"
+				},
+				"TargetNewVisitor": {
+					"viewType": "XML",
+					"viewName": "NewVisitor"
+				},
+				"TargetExistingVisitor": {
+					"viewType": "XML",
+					"viewName": "ExistingVisitor"
+				}
+			}
+		}
+	},
+	"sap.platform.hcp": {
+		"uri": "webapp",
+		"_version": "1.1.0"
+	}
+}

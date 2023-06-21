@@ -1,0 +1,39 @@
+<core:FragmentDefinition xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core" xmlns="sap.m">
+	<Dialog title="{i18n>bookRoom}" draggable="true" verticalScrolling="true" class="sapUiSizeCompact AddDialog" resizable="true"
+		contentWidth="20rem" titleAlignment="Center">
+		<content>
+			<VBox>
+				<f:SimpleForm layout="ColumnLayout" editable="true">
+					<f:content>
+						<Text text="Book Room for Meeting"></Text>
+						<Label text="{i18n>selectRoom}"/>
+						<Input id="idBookRoom" class="InputBox"  showSuggestion="true" showValueHelp="true" suggestionItems="{oAdminModel>/AvailableRooms}">
+							<suggestionItems>
+								<core:Item text="{oAdminModel>name} Capacity= {oAdminModel>capacity}				 RoomId={oAdminModel>rid}"/>
+							</suggestionItems>
+						</Input>
+					</f:content>
+				</f:SimpleForm>
+				<List headerText="Required Facilities" id="idfacilities">
+					<InputListItem label="Wifi">
+						<CheckBox selected="false"></CheckBox>
+					</InputListItem>
+					<InputListItem label="Air Conditioner">
+						<CheckBox selected="false"></CheckBox>
+					</InputListItem>
+					<InputListItem label="Snacks and Beverages">
+						<CheckBox selected="false"></CheckBox>
+					</InputListItem>
+				</List>
+				<Label text="{i18n>comments}" class="acptMeet"></Label>
+				<TextArea value="{oAdminModel>/Acceptmessage}" class="acptMeet"></TextArea>
+			</VBox>
+		</content>
+		<beginButton>
+			<Button text="{i18n>send}" type="Accept" press="onAcceptSend"/>
+		</beginButton>
+		<endButton>
+			<Button text="{i18n>Cancel}" type="Ghost" press="onRemoveAccept"/>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>

@@ -1,0 +1,35 @@
+{
+    "application": {
+        "id": "",
+        "title": "inc.inkthn.neo.NEO_VMS.NEO_VMS",
+        "description": "VMS",
+        "type": "SAP_UI5_Component",
+        "componentUrl": "/",
+        "appUrl": "#NEO_VMS-Display",
+        "navigationComponentName": "inc.inkthn.neo.NEO_VMS",
+        "intentSemanticObject": "NEO_VMS",
+        "intentAction": "Display",
+        "html5ApplicationName": "vmsfinal",
+        "HCPParentApplicationName": ""
+    },
+    "assignment": {
+        "groups": [
+            "fb8ea9c8-c777-4986-9647-f166f4b53a8d"
+        ],
+        "contentPackages": [
+            "4848f849-874b-4a60-893a-f436248e71d0"
+        ],
+        "categories": []
+    },
+    "tile": {
+        "type": "StaticTile",
+        "title": "VMS",
+        "subtitle": "Incture's Visitor Management System",
+        "searchKeywords": "VMS,Incture's Visitor Management System",
+        "displayIconUrl": "sap-icon://approvals",
+        "displayInfoText": "",
+        "size": "1x1",
+        "serviceURL": "",
+        "refreshInterval": ""
+    }
+}

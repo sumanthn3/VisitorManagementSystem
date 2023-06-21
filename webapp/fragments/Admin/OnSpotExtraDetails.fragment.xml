@@ -1,0 +1,42 @@
+<core:FragmentDefinition xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core" xmlns="sap.m"
+	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+	<Dialog title="{i18n>extraVisitors}" draggable="true" verticalScrolling="true" class="sapUiSizeCompact AddDialog" resizable="true"
+		contentWidth="50rem" titleAlignment="Center">
+		<content>
+	<Table id="idExtraVisitor" inset="true" items="{ path: 'oAdminModel>/getOnSpotExtraVisitors/visitors'}" alternateRowColors="true" >
+		<headerToolbar>
+			<OverflowToolbar>
+				<content>
+					<Title text="Total On-spot Visitors" level="H3"/>
+				</content>
+			</OverflowToolbar>
+		</headerToolbar>
+		<columns>
+		
+			<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+				<Text text="{i18n>name}"/>
+			</Column>
+			<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+				<Text text="{i18n>emailId}"/>
+			</Column>
+			<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+				<Text text="{i18n>Contact}"/>
+			</Column>
+		</columns>
+		<items>
+			<ColumnListItem >
+				<cells>
+				
+					<Text text="{oAdminModel>name}"></Text>
+					<Text text="{oAdminModel>email}"></Text>
+					<Text text="{oAdminModel>contactNo}"></Text>
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+	</content>
+	<endButton>
+			<Button text="{i18n>Cancel}" type="Reject" press="onOnSpotExtraDetailsCancel"/>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>

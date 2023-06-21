@@ -1,0 +1,23 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<TableSelectDialog noDataText="No Employee Found" alternateRowColors="true" title="Select Employee" search=".handleSearch" confirm=".handleClose" cancel=".handleClose"
+		items="{ path : 'oSecurityModel>/getAllPresent', sorter : { path : 'name', descending : false } }"  multiSelect="true" contentHeight="50%" contentWidth="50%" >
+		<ColumnListItem>
+			<cells>
+				<Text text="{oSecurityModel>name}"></Text>
+				<Text text="{oSecurityModel>contactNo}"></Text>
+				<Text text="{oSecurityModel>email}"></Text>
+			</cells>
+		</ColumnListItem>
+		<columns>
+			<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+				<Text text="{i18n>empName}"/>
+			</Column>
+			<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+				<Text text="{i18n>Contact}"/>
+			</Column>
+			<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+				<Text text="{i18n>Email}"/>
+			</Column>
+		</columns>
+	</TableSelectDialog>
+</core:FragmentDefinition>

@@ -1,0 +1,241 @@
+<core:FragmentDefinition xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core" xmlns="sap.m"
+	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+		<l:HorizontalLayout class="date">
+			<Label class="datelabel" text="Date:"/>
+			<DatePicker class="date" value="{oAdminModel>/Date}" valueFormat="MMM dd, yyyy" change="onDateChange"  />
+		</l:HorizontalLayout>
+		<l:VerticalLayout width="100%" class="TileStyle">
+				<l:Grid>
+				<l:content>
+					<GenericTile class="tileLayout sapUiMediumMarginBegin sapUiSmallMarginTop" id="onUpcoming" header="Upcoming Meetings" press="onUpcoming">
+						<TileContent>
+								<NumericContent class="tileCount" icon="sap-icon://appointment" value="{oAdminModel>/UpcomingCount}" withMargin="false" ></NumericContent>
+						
+						</TileContent>
+						<layoutData>
+							<l:GridData span="XL3 L3 M6 S12"/>
+						</layoutData>
+					</GenericTile>
+					<GenericTile class="tileLayout sapUiMediumMarginBegin sapUiSmallMarginTop"  id="onCheckInTile" header="Checked In" press="onCheckedIn">
+						<TileContent>
+							<NumericContent class="tileCount" icon="sap-icon://trend-down" value="{oAdminModel>/CheckedInCount}" withMargin="false" ></NumericContent>
+						
+						</TileContent>
+						<layoutData>
+							<l:GridData span="XL3 L3 M6 S12"/>
+						</layoutData>
+					</GenericTile>
+					<GenericTile class="tileLayout sapUiMediumMarginBegin sapUiSmallMarginTop" id="onCheckOutTile" header="Checked Out" press="onCheckedOut">
+						<TileContent >
+							<NumericContent class="tileCount" icon="sap-icon://trend-up" value="{oAdminModel>/CheckedOutCount}" withMargin="false" ></NumericContent>
+						
+						</TileContent>
+						<layoutData>
+							<l:GridData span="XL3 L3 M6 S12"/>
+						</layoutData>
+					</GenericTile>
+					<GenericTile class="tileLayout sapUiMediumMarginBegin sapUiSmallMarginTop" id="onTotalVis" header="Frequent Visitors" press="onFrequentVisittor">
+					<TileContent >
+							
+							<core:Icon src="sap-icon://account"></core:Icon>
+						</TileContent>
+						<layoutData>
+							<l:GridData span="XL3 L3 M6 S12"/>
+						</layoutData>
+					</GenericTile>
+				
+				</l:content>
+			</l:Grid>
+		</l:VerticalLayout>
+		<Table id="idAdminUpcoming" class="detailtable" inset="true" items="{path: 'oAdminModel>/UpcomingMeeting'}"
+			visible="{oViewModel>/UpcomingVisibility}" alternateRowColors="true" >
+			<headerToolbar>
+				<OverflowToolbar>
+					<content>
+						<Title text="Upcoming Meetings" class="TableTitle" level="H3"/>
+						<ToolbarSpacer></ToolbarSpacer>
+						<SearchField width="20%" placeholder="Search by Purpose" liveChange="onUpcomingSearch" class="sapUiSmallMargin sapUiSizeCompact"/>
+					</content>
+				</OverflowToolbar>
+			</headerToolbar>
+			<columns class="tableColumns">
+			<Column minScreenWidth="Medium" demandPopin="true" hAlign="Left">
+				<Text text="{i18n>Meeting ID}"/>
+			</Column>
+			<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+				<Text text="{i18n>Purpose}"/>
+			</Column>
+			<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+				<Text text="{i18n>room}"/>
+			</Column>
+			<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+				<Text text="{i18n>startTime}"/>
+			</Column>
+			<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+				<Text text="{i18n>idVisCount}"/>
+			</Column>
+			<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+				<Text text="{i18n>details}"/>
+			</Column>
+			</columns>
+			<items>
+				<ColumnListItem >
+					<cells>
+					<Text text="{oAdminModel>mId}"></Text>
+					<Text text="{oAdminModel>title}"></Text>
+					<Text text="{oAdminModel>roomName}"></Text>
+					<Text text="{oAdminModel>beginTime}"></Text>
+					<Text text="{oAdminModel>participantCount}"></Text>
+					<Button tooltip="Expand" icon="sap-icon://navigation-right-arrow" press="onExpandUpcomingVis"></Button>
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+		<Table id="idAdminCheckedIn" class="detailtable" inset="true" items="{path: 'oAdminModel>/CheckedIn'}"
+			visible="{oViewModel>/CheckedInVisibility}" alternateRowColors="true" >
+			<headerToolbar>
+				<OverflowToolbar>
+					<content>
+						<Title text="CheckedIn" class="TableTitle" level="H3"/>
+						<ToolbarSpacer></ToolbarSpacer>
+						
+						<SearchField width="20%" placeholder="Search by Name" liveChange="onCheckedInSearch" class="sapUiSmallMargin sapUiSizeCompact" />
+					</content>
+				</OverflowToolbar>
+			</headerToolbar>
+			<columns>
+			
+			<Column minScreenWidth="Medium" demandPopin="true" hAlign="Left">
+				<Text text="{i18n>MeetId}"/>
+			</Column>
+			<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+				<Text text="{i18n>name}"/>
+			</Column>
+			<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+				<Text text="{i18n>Contact}"/>
+			</Column>
+			<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+				<Text text="{i18n>ORG}"/>
+			</Column>
+			<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+				<Text text="{i18n>Purpose}"/>
+			</Column>
+			<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+				<Text text="{i18n>Time}"/>
+			</Column>
+			
+			</columns>
+			<items>
+				<ColumnListItem >
+					<cells>
+					<Text text="{oAdminModel>mId}"/>
+					<Text text="{oAdminModel>name}"/>
+					<Text text="{oAdminModel>contactNo}"/>
+					<Text text="{oAdminModel>organisation}"/>
+					<Text text="{oAdminModel>purpose}"/>
+					<Text text="{oAdminModel>checkedIn}"/>
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+		<Table id="idAdminCheckedOut" class="detailtable" inset="true" items="{path: 'oAdminModel>/CheckedOut'}"
+			visible="{oViewModel>/CheckedOutVisibility}" alternateRowColors="true" >
+			<headerToolbar>
+				<OverflowToolbar>
+					<content>
+						<Title text="CheckedOut" class="TableTitle" level="H3"/>
+						<ToolbarSpacer></ToolbarSpacer>
+					
+						<SearchField width="20%" placeholder="Search by Name" liveChange="onCheckedInSearch" class="sapUiSmallMargin sapUiSizeCompact" />
+					</content>
+				</OverflowToolbar>
+			</headerToolbar>
+			<columns>
+		
+			<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+				<Text text="{i18n>visId}"/>
+			</Column>
+			<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+				<Text text="{i18n>name}"/>
+			</Column>
+			<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+				<Text text="{i18n>Contact}"/>
+			</Column>
+			<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+				<Text text="{i18n>ORG}"/>
+			</Column>
+			<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+				<Text text="{i18n>Purpose}"/>
+			</Column>
+			<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+				<Text text="{i18n>Time}"/>
+			</Column>
+			<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+				<Text text="{i18n>Blacklist}"/>
+			</Column>
+		</columns>
+			<items>
+				<ColumnListItem >
+					<cells>
+					
+					<Text text="{oAdminModel>vId}"/>
+					<Text text="{oAdminModel>name}"/>
+					<Text text="{oAdminModel>contactNo}"/>
+					<Text text="{oAdminModel>organisation}"/>
+					<Text text="{oAdminModel>purpose}"/>
+					<Text text="{oAdminModel>checkedOut}"/>
+					<Toolbar style="Clear">
+					<Button id="idBlacklistBtn" class="blacklistBtn" icon="sap-icon://sys-cancel" type="Reject" press="onDoBlacklist" visible="{oAdminModel>ButtonVisibility}"></Button>
+					<Text id="idBlacklistTxt" class="blacklistText"  text="Blacklisted" visible="{oAdminModel>TextVisibility}"></Text>
+				</Toolbar>
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+		<Table id="idAdminFrequentVisitor" class="detailtable" inset="true" items="{path: 'oAdminModel>/FrequentVisitors'}"
+			visible="{oViewModel>/FrequentVisitorVisibility}" alternateRowColors="true" >
+			<headerToolbar>
+				<OverflowToolbar>
+					<content>
+						<Title text="Frequent Visitors" class="TableTitle" level="H3"/>
+						<ToolbarSpacer></ToolbarSpacer>
+					
+					<SearchField width="20%" placeholder="Search by Name" liveChange="onFreqVisSearch" class="sapUiSmallMargin sapUiSizeCompact" />
+					</content>
+				</OverflowToolbar>
+			</headerToolbar>
+			<columns>
+			<Column minScreenWidth="Medium" demandPopin="true" hAlign="Left">
+				<Text text="{i18n>empName}"/>
+			</Column>
+			<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+				<Text text="{i18n>Contact}"/>
+			</Column>
+			<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+				<Text text="{i18n>emailId}"/>
+			</Column>
+			<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+				<Text text="{i18n>idOrgz}"/>
+			</Column>
+			<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+				<Text text="{i18n>post}"/>
+			</Column>
+			<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+				<Text text="{i18n>details}"/>
+			</Column>
+		</columns>
+			<items>
+				<ColumnListItem >
+					<cells>
+					<Text text="{oAdminModel>hostName}"/>
+					<Text text="{oAdminModel>contactNo}"/>
+					<Text text="{oAdminModel>email}"/>
+					<Text text="{oAdminModel>office}"/>
+					<Text text="{oAdminModel>post}"/>
+					<Button id="idFreqexpand"  tooltip="Expand" icon="sap-icon://navigation-right-arrow" press="onExpandFreqVis"></Button>
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+
+</core:FragmentDefinition>

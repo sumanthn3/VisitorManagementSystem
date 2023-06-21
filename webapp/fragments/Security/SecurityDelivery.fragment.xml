@@ -1,0 +1,50 @@
+<core:FragmentDefinition xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core" xmlns="sap.m"
+	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+
+	<Table id="SecurityDelivery" inset="true" items="{ path: 'oSecurityModel>/getRecentDeliveries'}" alternateRowColors="true" >
+		<headerToolbar>
+			<OverflowToolbar>
+				<content>
+					<Title text="Recent Deliveries" class="TableTitle" level="H3"/>
+					<ToolbarSpacer></ToolbarSpacer>
+						<Button icon="sap-icon://synchronize" tooltip="Refresh" press="onRefreshDeliveries"></Button>
+					<Button text="New Delivery" type="Emphasized" press="onAdd"></Button>
+				</content>
+			</OverflowToolbar>
+		</headerToolbar>
+		<columns>
+			<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+				<Text text="{i18n>delivery}"/>
+			</Column>
+			<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+				<Text text="{i18n>Contact}"/>
+			</Column>
+			<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+				<Text text="{i18n>delivType}"/>
+			</Column>
+			<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+				<Text text="{i18n>Status}"/>
+			</Column>
+			
+			<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+				<Text text="{i18n>action}"/>
+			</Column>
+		</columns>
+		<items>
+			<ColumnListItem >
+				<cells>
+					<Text text="{oSecurityModel>dId}"></Text>
+					<Text text="{oSecurityModel>contactNo}"></Text>
+					<Text text="{path: 'oSecurityModel>signature', formatter:'inc.inkthn.neo.NEO_VMS.utility.formatter.changeType'}"></Text>
+					<Text text="{oSecurityModel>status}"></Text>
+					
+					
+					<Toolbar style="Clear">
+						<Button text="Accept" type="Accept" press="onAcceptDelivery" ></Button>
+						<Button text="Reject" type="Reject" press="onRejectDelivery" ></Button>
+					</Toolbar>
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+</core:FragmentDefinition>

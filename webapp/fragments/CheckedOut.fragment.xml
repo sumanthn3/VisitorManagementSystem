@@ -1,0 +1,19 @@
+<core:FragmentDefinition xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core" xmlns="sap.m">
+	<Dialog title="Checked Out" draggable="true" verticalScrolling="true" class="sapUiSizeCompact AddDialog" resizable="true"
+		contentWidth="25rem" titleAlignment="Center">
+		<content>
+			<l:VerticalLayout class="feedback">
+				<Label text="Enter your Feedback:" class="otp icontab" labelFor="idFeedback"></Label>
+				<TextArea id="idFeedback" cols="25" rows="5"></TextArea>
+				<Label text="Rating" class="otp icontab" labelFor="idRating"/>
+				<RatingIndicator id="idRating" maxValue="5" class="sapUiSmallMarginBottom"  iconSize="22px" tooltip="Rating Tooltip"/>
+			</l:VerticalLayout>
+		</content>
+		<beginButton>
+			<Button text="Check Out" type="Emphasized" press="onPressCheckOut"></Button>
+		</beginButton>
+		<endButton>
+			<Button text="Cancel" type="Reject" press="onCheckOutCancel"/>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>

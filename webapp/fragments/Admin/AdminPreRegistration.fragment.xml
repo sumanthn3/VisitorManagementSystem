@@ -1,0 +1,52 @@
+<core:FragmentDefinition xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core" xmlns="sap.m"
+	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+
+	<Table id="AdminVisitor" inset="true" items="{ path: 'oAdminModel>/getPreregister'}" alternateRowColors="true" >
+		<headerToolbar>
+			<OverflowToolbar>
+				<content>
+					<Title text="Pre Registered Visitors" class="TableTitle" level="H3"/>
+					<ToolbarSpacer width="46%"></ToolbarSpacer>
+					<Label text="Select Employee:"></Label>
+					<ComboBox id="idPerID" selectedKey="{oAdminModel>/selectedEid}" items="{oAdminModel>/getEmployeeList}" change="onRefreshPreReg">
+					<core:Item text="{oAdminModel>name}" key="{oAdminModel>eId}"></core:Item>
+					</ComboBox>
+					<Button text="Add Visitor +" type="Emphasized" press="onAdd" ></Button>
+				</content>
+			</OverflowToolbar>
+		</headerToolbar>
+		<columns>
+			<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+				<Text text="{i18n>visId}"/>
+			</Column>
+			<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+				<Text text="{i18n>Name}"/>
+			</Column>
+			<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+				<Text text="{i18n>Email}"/>
+			</Column>
+			<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+				<Text text="{i18n>Contact}"/>
+			</Column>
+			<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+				<Text text="{i18n>Purpose}"/>
+			</Column>
+			<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+				<Text text="{i18n>Organisation}"/>
+			</Column>
+		</columns>
+		<items>
+			<ColumnListItem >
+				<cells>
+					<Text text="{oAdminModel>vhId}"></Text>
+					<Text text="{oAdminModel>visitorName}"></Text>
+					<Text text="{oAdminModel>email}"></Text>
+					<Text text="{oAdminModel>contactNo}"></Text>
+					<Text text="{oAdminModel>puprose}"></Text>
+					<Text text="{oAdminModel>organisation}"></Text>
+				
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+</core:FragmentDefinition>

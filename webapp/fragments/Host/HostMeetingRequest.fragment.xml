@@ -1,0 +1,126 @@
+<core:FragmentDefinition xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core" xmlns="sap.m"
+	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+	<l:VerticalLayout width="100%" class="TileStyle">
+		<l:Grid>
+			<l:content>
+				<GenericTile class="tileLayout sapUiMediumMarginBegin sapUiSmallMarginTop" id="onTileRequest" header="Meeting Request" press="onMeetingRequest">
+					<TileContent>
+							<NumericContent class="tileCount" icon="sap-icon://request" value="{oHostModel>/OnSpotMeetingRequestCount}" withMargin="false" ></NumericContent>
+					
+					</TileContent>
+					<layoutData>
+						<l:GridData span="XL3 L3 M6 S12"/>
+					</layoutData>
+				</GenericTile>
+				<GenericTile class="tileLayout sapUiMediumMarginBegin sapUiSmallMarginTop" id="onTileOngoing" header="Ongoing Meeting" press="OnGoingMeeting">
+					<TileContent >
+						<NumericContent class="tileCount" icon="sap-icon://present" value="{oHostModel>/OnGoingMeetingCount}" withMargin="false" ></NumericContent>
+						<!--<core:Icon src="sap-icon://present"></core:Icon>-->
+					</TileContent>
+					<layoutData>
+						<l:GridData span="XL3 L3 M6 S12"/>
+					</layoutData>
+				</GenericTile>
+				
+			</l:content>
+		</l:Grid>
+	</l:VerticalLayout>
+	<Table id="idHostMeetingRequest" inset="true" items="{ path: 'oHostModel>/getOnSpotMeetingRequest'}" alternateRowColors="true" visible="{oViewModel>/MeetingReqVisibility}" >
+		<headerToolbar>
+			<OverflowToolbar>
+				<content>
+					<Title text="Meeting Request" class="TableTitle" level="H3"/>
+					<ToolbarSpacer></ToolbarSpacer>
+					<Button icon="sap-icon://synchronize" tooltip="Refresh" press="onRefreshMeetingReq"></Button>
+				
+				</content>
+			</OverflowToolbar>
+		</headerToolbar>
+		<columns>
+			<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+				<Text text="{i18n>Meeting ID}"/>
+			</Column>
+			<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+				<Text text="{i18n>Purpose}"/>
+			</Column>
+			<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+				<Text text="{i18n>room}"/>
+			</Column>
+				<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+				<Text text="{i18n>meetDate}"/>
+			</Column>
+			<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+				<Text text="{i18n>startTime}"/>
+			</Column>
+			<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+				<Text text="{i18n>idVisCount}"/>
+			</Column>
+			<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+				<Text text="{i18n>action}"/>
+			</Column>
+		</columns>
+		<items>
+			<ColumnListItem >
+				<cells>
+					<Text text="{oHostModel>mId}"></Text>
+					<Text text="{oHostModel>title}"></Text>
+					<Text text="{oHostModel>roomName}"></Text>
+					<Text text="{oHostModel>date}"></Text>
+					<Text text="{oHostModel>beginTime}"></Text>
+					<Text text="{oHostModel>participantCount}"></Text>
+					<Toolbar>
+					<Button icon="sap-icon://employee-approvals" tooltip="Accept" press="onAcceptOnSpot"></Button>
+					<Button icon="sap-icon://employee-rejections" tooltip="Reject" press="onRejectOnSpot"></Button>
+					<Button tooltip="Expand" icon="sap-icon://navigation-right-arrow" press="onExpandMeetingReq"></Button>
+				</Toolbar></cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+	<Table id="idHostOnGoingMeeting" inset="true" items="{path: 'oHostModel>/getOnGoingMeeting'}" alternateRowColors="true" visible="{oViewModel>/OnGoingMeetingVisibility}">
+		<headerToolbar>
+			<OverflowToolbar>
+				<content>
+					<Title text="Ongoing Meetings" class="TableTitle" level="H3"/>
+					<ToolbarSpacer></ToolbarSpacer>
+				
+						<SearchField width="20%" placeholder="Search by Purpose" liveChange="onUpcomingSearch" class="sapUiSmallMargin" />
+				</content>
+			</OverflowToolbar>
+		</headerToolbar>
+		<columns class="tableColumns">
+			<Column minScreenWidth="Medium" demandPopin="true" hAlign="Left">
+				<Text text="{i18n>Meeting ID}"/>
+			</Column>
+			<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+				<Text text="{i18n>Purpose}"/>
+			</Column>
+			<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+				<Text text="{i18n>room}"/>
+			</Column>
+			<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+				<Text text="{i18n>startTime}"/>
+			</Column>
+			<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+				<Text text="{i18n>idVisCount}"/>
+			</Column>
+			<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+				<Text text="{i18n>action}"/>
+			</Column>
+		</columns>
+		<items>
+			<ColumnListItem >
+				<cells>
+					<Text text="{oHostModel>mId}"></Text>
+					<Text text="{oHostModel>title}"></Text>
+					<Text text="{oHostModel>roomName}"></Text>
+					<Text text="{oHostModel>beginTime}"></Text>
+					<Text text="{oHostModel>participantCount}"></Text>
+					<Toolbar>
+					<Button text="Extend" type="Emphasized" press="onExtendMeeting" ></Button>
+					<Button text="End" type="Reject"  press="onEndMeeting" ></Button>
+					</Toolbar>
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+</core:FragmentDefinition>

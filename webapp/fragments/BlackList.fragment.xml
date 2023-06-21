@@ -1,0 +1,21 @@
+<core:FragmentDefinition xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core" xmlns="sap.m">
+	<Dialog title="{i18n>reson}" draggable="true" verticalScrolling="true" class="sapUiSizeCompact AddDialog" resizable="true"
+		contentWidth="20rem" titleAlignment="Center">
+		<content>
+			<VBox>
+				<f:SimpleForm layout="ColumnLayout" editable="true">
+					<f:content>
+						<Text text="Enter The Reason"></Text>
+				     	<TextArea value="{oHostModel>/reason}"></TextArea>
+					</f:content>
+				</f:SimpleForm>
+			</VBox>
+		</content>
+		<beginButton>
+			<Button text="{i18n>done}" type="Accept" press="onEnterBlacklist"/>
+		</beginButton>
+		<endButton>
+			<Button text="{i18n>Cancel}" type="Ghost" press="onBlacklistCancel"/>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>

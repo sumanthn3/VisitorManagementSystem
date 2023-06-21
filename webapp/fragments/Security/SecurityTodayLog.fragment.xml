@@ -1,0 +1,122 @@
+<core:FragmentDefinition xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core" xmlns="sap.m"
+	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+		<l:HorizontalLayout class="date">
+		<Label class="datelabel" text="Date:"/>
+	
+		<DatePicker class="date" value="{oSecurityModel>/Date}" valueFormat="MMM dd, yyyy" change="onDateChange2" />
+	</l:HorizontalLayout>
+	<l:VerticalLayout width="100%" class="TileStyle">
+		<l:Grid>
+			<l:content>
+				<GenericTile class="tileLayout sapUiMediumMarginBegin sapUiSmallMarginTop" id="onExpected" header="Expected Visitors" press="onExpected">
+					<TileContent>
+							<NumericContent class="tileCount" icon="sap-icon://trend-down" value="{oSecurityModel>/ExpectedCount}" withMargin="false" ></NumericContent>
+					
+					</TileContent>
+					<layoutData>
+						<l:GridData span="XL3 L3 M6 S12"/>
+					</layoutData>
+				</GenericTile>
+				<GenericTile class="tileLayout sapUiMediumMarginBegin sapUiSmallMarginTop" id="onNoShow" header="No Show Visitors" press="onNoShow">
+					<TileContent >
+						<NumericContent class="tileCount" icon="sap-icon://trend-up" value="{oSecurityModel>/NoShowCount}" withMargin="false" ></NumericContent>
+					
+					</TileContent>
+					<layoutData>
+						<l:GridData span="XL3 L3 M6 S12"/>
+					</layoutData>
+				</GenericTile>
+				
+			</l:content>
+		</l:Grid>
+	</l:VerticalLayout>
+	<Table id="idSecurityExpected" inset="true" items="{path: 'oSecurityModel>/Expected'}" alternateRowColors="true" visible="{oViewModel>/ExpectedVisibility}">
+		<headerToolbar>
+			<OverflowToolbar>
+				<content>
+					<Title text="Expected Visitors" class="TableTitle" level="H3"/>
+					<ToolbarSpacer></ToolbarSpacer>
+					
+				</content>
+			</OverflowToolbar>
+		</headerToolbar>
+		<columns>
+		<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+				<Text text="{i18n>MeetId}"/>
+			</Column>
+			<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+				<Text text="{i18n>name}"/>
+			</Column>
+			<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+				<Text text="{i18n>Contact}"/>
+			</Column>
+			<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+				<Text text="{i18n>ORG}"/>
+			</Column>
+			<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+				<Text text="{i18n>Purpose}"/>
+			</Column>
+			<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+				<Text text="{i18n>meeting}"/>
+			</Column>
+		</columns>
+		<items>
+			<ColumnListItem >
+				<cells>
+					<Text text="{oSecurityModel>mId}"/>
+					<Text text="{oSecurityModel>name}"/>
+					<Text text="{oSecurityModel>contactNo}"/>
+					<Text text="{oSecurityModel>organisation}"/>
+					<Text text="{oSecurityModel>purpose}"/>
+					<Text text="{oSecurityModel>meetingTime}"/>
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+	<Table id="idSecurityNoshow" inset="true" items="{path: 'oSecurityModel>/NoShow'}" alternateRowColors="true" visible="{oViewModel>/NoShowVisibility}">
+		<headerToolbar>
+			<OverflowToolbar>
+				<content>
+					<Title text="No Show Visitors" class="TableTitle" level="H3"/>
+					<ToolbarSpacer></ToolbarSpacer>
+
+				</content>
+			</OverflowToolbar>
+		</headerToolbar>
+		<columns>
+			<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+				<Text text="{i18n>MeetId}"/>
+			</Column>
+			<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+				<Text text="{i18n>name}"/>
+			</Column>
+			<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+				<Text text="{i18n>Contact}"/>
+			</Column>
+			<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+				<Text text="{i18n>ORG}"/>
+			</Column>
+			<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+				<Text text="{i18n>Purpose}"/>
+			</Column>
+			
+			<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+				<Text text="{i18n>meeting}"/>
+			</Column>
+		</columns>
+		<items>
+			<ColumnListItem >
+				<cells>
+					<Text text="{oSecurityModel>mId}"/>
+					<Text text="{oSecurityModel>name}"/>
+					<Text text="{oSecurityModel>contactNo}"/>
+					<Text text="{oSecurityModel>organisation}"/>
+					<Text text="{oSecurityModel>purpose}"/>
+		
+					<Text text="{oSecurityModel>meetingTime}"/>
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+	
+</core:FragmentDefinition>

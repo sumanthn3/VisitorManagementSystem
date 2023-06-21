@@ -1,0 +1,54 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:f="sap.ui.layout.form" xmlns:u="sap.ui.unified"
+	controllerName="inc.inkthn.neo.NEO_VMS.controller.ExistingVisitor" xmlns:html="http://www.w3.org/1999/xhtml">
+	<App>
+		<pages>
+			<Page title="Title" enableScrolling="true" class="visitorBackground">
+				<customHeader >
+					<Bar class="landingheader">
+						<contentLeft>
+							<Image height="100%" width="10%" src="./image/inclogo.png" class="LandingLogo sapUiMediuMarginBegin"></Image>
+						</contentLeft>
+					</Bar>
+				</customHeader>
+				<content>
+					<Panel width="80%" backgroundDesign="Translucent" class="Existing">
+						<VBox>
+							<f:SimpleForm layout="ColumnLayout" editable="true" id="idSimpleFormPreReg" title="Edit Your Details">
+								<f:content>
+									<Label text="{i18n>firstname}"/>
+									<Input id="idfName" class="InputBox" value="{oLoginModel>/ExvisitorName}"/>
+									<Label text="{i18n>Email}"/>
+									<Input id="idEmail" type="Email" class="InputBox" value="{oLoginModel>/Exemail}" editable="false"/>
+									<Label text="{i18n>Phone}"/>
+									<Input id="idPhone" type="Number" class="InputBox" value="{oLoginModel>/ExcontactNo}"/>
+									<Label text="{i18n>Identity}"/>
+									<ComboBox id="idPerID" selectedKey="{oLoginModel>/ExpersonalIdType}" items="{oViewModel>/list}" class="InputBox">
+										<core:Item text="{oViewModel>Identity}" key="{oViewModel>Identity}"></core:Item>
+									</ComboBox>
+									<Label text="{i18n>IDNUMBER}"/>
+									<Input id="idPerIDNum" type="Number" class="InputBox" value="{oLoginModel>/ExidentityNo}"/>
+									<Label text="{i18n>Organisation}"/>
+									<Input id="idVisOrg" class="MeetInputBox" value="{oLoginModel>/Exorganisation}"/>
+									<Label text="{i18n>hostmeet}"/>
+									<Input id="idHostName" class="InputBox" value="{oLoginModel>/ExhostName}" editable="false"></Input>
+									<Label text="{i18n>Purpose}"/>
+									<Input id="idVisPurp" class="MeetInputBox" value="{oLoginModel>/Expuprose}" editable="false"/>
+									<Label text="{i18n>Upload}"/>
+									<Button text="Capture Photo" press="onCapture"></Button>
+									<Button text="Select Photo" press="onSelect"></Button>
+									<Image width="150px" height="170px" id="myImage"></Image>
+								</f:content>
+							</f:SimpleForm>
+						</VBox>
+						<OverflowToolbar style="Clear" class="Extoolbar">
+							<ToolbarSpacer ></ToolbarSpacer>
+							<Button id="badgeBtn" type="Emphasized" text="Get Badge" press="ongetBatch" enabled="false"></Button>
+							<Button type="Success" text="Submit" press="onEditDetailsSubmit"/>
+							<Button text="Close" type="Reject" press="onExVisCancel"/>
+						</OverflowToolbar>
+					</Panel>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

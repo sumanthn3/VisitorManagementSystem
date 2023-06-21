@@ -1,0 +1,56 @@
+<core:FragmentDefinition xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core" xmlns="sap.m"
+	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+
+	<Table id="HostVisitor" inset="true" items="{ path: 'oHostModel>/getPreregister'}" alternateRowColors="true" >
+		<headerToolbar>
+			<OverflowToolbar>
+				<content>
+					<Title text="Pre Registered Meetings" class="TableTitle" level="H3"/>
+					<ToolbarSpacer></ToolbarSpacer>
+					<Button icon="sap-icon://synchronize" tooltip="Refresh" press="onRefreshPreReg"></Button>
+				
+					<Button text="Add Visitor +" type="Emphasized" press="onAdd"></Button>
+				</content>
+			</OverflowToolbar>
+		</headerToolbar>
+		<columns>
+			<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+				<Text text="{i18n>Meeting ID}"/>
+			</Column>
+			<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+				<Text text="{i18n>Purpose}"/>
+			</Column>
+			<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+				<Text text="{i18n>room}"/>
+			</Column>
+			<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+				<Text text="{i18n>startTime}"/>
+			</Column>
+			<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+				<Text text="{i18n>idVisCount}"/>
+			</Column>
+			<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+				<Text text="{i18n>status}"/>
+			</Column>
+			<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+				<Text text="{i18n>details}"/>
+			</Column>
+		</columns>
+		<items>
+			<ColumnListItem >
+				<cells>
+					<Text text="{oHostModel>mId}"></Text>
+					<Text text="{oHostModel>title}"></Text>
+					<Text text="{oHostModel>roomName}"></Text>
+					<Text text="{oHostModel>beginTime}"></Text>
+					<Text text="{oHostModel>participantCount}"></Text>
+					<Text text="{oHostModel>status}"></Text>
+					<Toolbar style="Clear">
+					
+						<Button tooltip="Expand" class="PreRegButton" icon="sap-icon://navigation-right-arrow" press="onExpandPreRegVis"></Button>
+					</Toolbar>
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+</core:FragmentDefinition>

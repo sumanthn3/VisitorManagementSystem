@@ -1,0 +1,47 @@
+<core:FragmentDefinition xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core" xmlns="sap.m"
+	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+	<Dialog title="{i18n>extraVisitors}" draggable="true" verticalScrolling="true" class="sapUiSizeCompact AddDialog" resizable="true"
+		contentWidth="50rem" titleAlignment="Center">
+		<content>
+	<Table id="idUpcomingVisitorsList" inset="true" items="{ path: 'oHostModel>/getUpcomingVisitorslist/visitors'}" alternateRowColors="true" >
+		<headerToolbar>
+			<OverflowToolbar>
+				<content>
+					<Title text="Total UpComing  Visitors" level="H3"/>
+				</content>
+			</OverflowToolbar>
+		</headerToolbar>
+		<columns>
+		
+			<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+				<Text text="{i18n>name}"/>
+			</Column>
+		
+			<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+				<Text text="{i18n>emailId}"/>
+			</Column>
+			<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+				<Text text="{i18n>Contact}"/>
+			</Column>
+		</columns>
+		<items>
+			<ColumnListItem >
+				<cells>
+				
+					<Text text="{oHostModel>name}"></Text>
+					<Text text="{oHostModel>email}"></Text>
+					<Text text="{oHostModel>contactNo}"></Text>
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+	</content>
+	<beginButton>
+		<Button text="{i18n>cancelmeet}" type="Reject" press="onMeetingCancel"/>
+	</beginButton>
+	<endButton>
+			
+			<Button text="{i18n>Cancel}" type="Reject" press="onUpcomingVisitorCancel"/>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>

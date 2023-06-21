@@ -1,0 +1,70 @@
+<core:FragmentDefinition xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:ui="sap.ui.table"
+	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+	<l:HorizontalLayout class="date">
+		<Label class="datelabel" text="Date:"/>
+		<DatePicker class="date" id="evacDate" value="{oAdminModel>/Date}" valueFormat="MMM dd, yyyy"/>
+	</l:HorizontalLayout>
+	<l:VerticalLayout width="100%">
+		<TextArea   value="{oAdminModel>/evacMessage}"  cols="60" rows="5" class="sapUiMediumMarginBegin sapUiMediumMarginTop sapUiSmallMarginEnd" placeholder="Type the Evacuation Message"></TextArea>
+			<l:HorizontalLayout>
+		<Button text="Send all" class="sapUiLargeMarginBegin sapUiMediumMarginTop" type="Default" press="onSelectAll"></Button>
+		<Button text="Send" class="sapUiSmallMarginBegin sapUiMediumMarginTop" type="Default" press="onSendSelected" ></Button>
+		</l:HorizontalLayout>
+			<l:Grid defaultSpan="XL6 L4 M6 S12" class="sapUiTinyMarginTopBottom ">
+		<l:content>
+				<ui:Table id="tableVis" selectionMode="MultiToggle" rows="{oAdminModel>/getAllPresent1}" visibleRowCount="4" enableCellFilter="{ui>/cellFilterOn}"
+				filter="name" ariaLabelledBy="title" alternateRowColors="true" >
+				<ui:extension>
+					<OverflowToolbar>
+						<Title id="Visitors" text="Visitors Present"/>
+						<ToolbarSpacer/>
+						<ToolbarSeparator/>
+						<SearchField placeholder="Search By Name" liveChange="onVisSearch" search="onVisSearch" class="sapUiSmallMargin sapUiSizeCompact" width="13rem"/>
+					</OverflowToolbar>
+				</ui:extension>
+				<ui:columns>
+					<ui:Column width="18.2rem"  >
+						<Label text="Visitor Name"/>
+						<ui:template>
+							<Text text="{oAdminModel>name}"/>
+						</ui:template>
+					</ui:Column>
+					<ui:Column width="18rem" >
+						<Label text="Email"/>
+						<ui:template>
+							<Text text="{oAdminModel>email}" />
+						</ui:template>
+					</ui:Column>
+				</ui:columns>
+		
+			</ui:Table>
+			<ui:Table id="tableEmp" selectionMode="MultiToggle" rows="{oAdminModel>/getAllPresent}" visibleRowCount="4" enableCellFilter="{ui>/cellFilterOn}"
+				filter="name" ariaLabelledBy="title"  alternateRowColors="true" >
+				<ui:extension>
+					<OverflowToolbar>
+						<Title id="Employees" text="Employees"/>
+						<ToolbarSpacer/>
+						<ToolbarSeparator/>
+						<SearchField placeholder="Search By Name" liveChange="onEmpSearch" search="onEmpSearch" class="sapUiSmallMargin sapUiSizeCompact"  width="13rem"/>
+					</OverflowToolbar>
+				</ui:extension>
+				<ui:columns>
+					<ui:Column width="18rem" >
+						<Label text="Employee Name"/>
+						<ui:template>
+							<Text text="{oAdminModel>name}"/>
+						</ui:template>
+					</ui:Column>
+					<ui:Column width="18rem" >
+						<Label text="Email"/>
+						<ui:template>
+							<Text text="{oAdminModel>email}" />
+						</ui:template>
+					</ui:Column>
+				</ui:columns>
+		
+			</ui:Table>
+		</l:content>
+	</l:Grid>
+	</l:VerticalLayout>
+</core:FragmentDefinition>

@@ -1,0 +1,42 @@
+<mvc:View controllerName="inc.inkthn.neo.NEO_VMS.controller.Host" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" 	xmlns:f="sap.f"
+	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns:tnt="sap.tnt">
+	<tnt:ToolPage id="ToolPage">
+		<tnt:header>
+			<f:ShellBar
+				showMenuButton="true"
+				homeIcon="./image/inclogo.png"
+				showNotifications="true"
+				menuButtonPressed=".onSideNavButtonPress"
+				notificationsNumber="{oHostModel>/NotifCount}"  notificationsPressed="onNotificationPopover" class="shellbar">
+				<f:profile>
+					<f:Avatar src="data:image/png;base64,{oHostModel>/image}" displaySize="XS" imageFitType="Cover" press="onProfile" />
+				</f:profile>
+			</f:ShellBar>
+	</tnt:header>
+	<tnt:sideContent >
+		<tnt:SideNavigation class="masterpage" expanded="true" itemSelect=".onItemSelect">
+			<tnt:NavigationList id="navlist" items="{path: 'oGlobalModel>/HostMasterDetails'}">
+				<tnt:NavigationListItem text="{oGlobalModel>title}" icon="{oGlobalModel>icon}" expanded="{oGlobalModel>expanded}" key="{oGlobalModel>key}"></tnt:NavigationListItem>
+			</tnt:NavigationList>
+		</tnt:SideNavigation>
+	</tnt:sideContent>
+	<tnt:mainContents>
+		<NavContainer id="detailContainer" initialPage="hostDash">
+			<pages>
+				<ScrollContainer id="hostDash" horizontal="false" vertical="true" height="100%">
+					<core:Fragment fragmentName="inc.inkthn.neo.NEO_VMS.fragments.Host.HostDetailDash" type="XML"></core:Fragment>
+				</ScrollContainer>
+				<ScrollContainer id="hostPreRegistration" horizontal="false" vertical="true" height="100%">
+					<core:Fragment fragmentName="inc.inkthn.neo.NEO_VMS.fragments.Host.HostPreRegistration" type="XML"></core:Fragment>
+				</ScrollContainer>
+				<ScrollContainer id="hostBlacklist" horizontal="false" vertical="true" height="100%">
+					<core:Fragment fragmentName="inc.inkthn.neo.NEO_VMS.fragments.Host.HostBlacklist" type="XML"></core:Fragment>
+				</ScrollContainer>
+				<ScrollContainer id="hostMeetingRequest" horizontal="false" vertical="true" height="100%">
+					<core:Fragment fragmentName="inc.inkthn.neo.NEO_VMS.fragments.Host.HostMeetingRequest" type="XML"></core:Fragment>
+				</ScrollContainer>
+			</pages>
+		</NavContainer>
+	</tnt:mainContents>
+</tnt:ToolPage>
+</mvc:View>

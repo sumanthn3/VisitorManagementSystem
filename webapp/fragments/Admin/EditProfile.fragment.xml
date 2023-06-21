@@ -1,0 +1,28 @@
+<core:FragmentDefinition xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core" xmlns="sap.m">
+	<Dialog title="{i18n>editProfile}" draggable="true" verticalScrolling="true" class="sapUiSizeCompact AddDialog" resizable="true"
+		contentWidth="20rem" titleAlignment="Center">
+		<content>
+			<l:HorizontalLayout class="editProfilePic">
+				<l:VerticalLayout>
+			<Avatar src="data:image/png;base64,{oAdminModel>/image}" displaySize="M" imageFitType="Cover" />
+			<Link text="Change Picture" press="onChangePicture"></Link>
+			<Image id="idEditAdminPICTURE" height="100px" width="100px"></Image>
+			</l:VerticalLayout>
+			<l:VerticalLayout class="editProfile">
+			<Label text="Name"></Label>
+			<Input id="idEditName" value="{oAdminModel>/name}" editable="true"></Input>
+			<Label text="Email"></Label>
+			<Input id="idEditEmail" value="{oAdminModel>/email}" editable="true"></Input>
+			<Label text="Contact Number"></Label>
+			<Input id="idEditContact" value="{oAdminModel>/contactNo}" editable="true"></Input>
+			</l:VerticalLayout>
+			</l:HorizontalLayout>
+		</content>
+		<beginButton>
+			<Button text="{i18n>Save}" type="Accept" press="onSaveProfile"/>
+		</beginButton>
+		<endButton>
+			<Button text="{i18n>Cancel}" type="Ghost" press="onCancelProfile"/>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>

@@ -1,0 +1,86 @@
+<core:FragmentDefinition xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core" xmlns="sap.m">
+	<Dialog title="{i18n>welcom}" draggable="true" verticalScrolling="true" class="sapUiSizeCompact AddDialog" resizable="true"
+		contentWidth="30rem" titleAlignment="Center">
+		<content>
+			<HBox>
+				<VBox>
+					<f:SimpleForm layout="ColumnLayout" editable="true" id="idSimpleFormPreReg">
+						<f:content>
+							<Text text="Enter Personal Details"></Text>
+							<Label text="{i18n>yourName}"/>
+							<Input id="idName" class="InputBox"/>
+							<Label text="{i18n>Email}"/>
+							<Input id="idEmail" type="Email" class="InputBox"/>
+							<Label text="{i18n>Phone}"/>
+							<Input id="idPhone" type="Number" class="InputBox"/>
+							<Label text="{i18n>Identity}"/>
+							<ComboBox id="idPerID" selectedKey="{oViewModel>/sSelect}" items="{oViewModel>/list}" class="InputBox">
+								<core:Item text="{oViewModel>Identity}" key="{oViewModel>Identity}"></core:Item>
+							</ComboBox>
+							<Label text="{i18n>IDNUMBER}"/>
+							<Input id="idPerIDNum" type="Number" class="InputBox"/>
+							<Label text="{i18n>Organisation}"/>
+							<Input id="idVisOrg" class="MeetInputBox"/>
+						</f:content>
+					</f:SimpleForm>
+				</VBox>
+				<VBox>
+					<f:SimpleForm layout="ColumnLayout" editable="true" id="idSimpleFormPreReg1">
+						<f:content>
+							<Text text="Enter Meeting Details"></Text>
+							<Label text="{i18n>Purpose}"/>
+							<Input id="idVisPurp" class="MeetInputBox"/>
+						</f:content>
+					</f:SimpleForm>
+				</VBox>
+		       <Table id="idVisitor"  inset="true" items="{path: 'oVisitorModel>/NewVisitor'}">
+			<headerToolbar>
+				<OverflowToolbar>
+					<content>
+					
+						<Title text="Add Visitor" level="H6"/>
+						<ToolbarSpacer></ToolbarSpacer>
+						 <Button icon="sap-icon://add-employee" press="addVis"></Button>
+					
+					</content>
+				</OverflowToolbar>
+			</headerToolbar>
+			<columns>
+				<Column minScreenWidth="Medium" demandPopin="true" hAlign="Left">
+					<Text text="{i18n>Name}"/>
+				</Column>
+				<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+					<Text text="{i18n>Email}"/>
+				</Column>
+				<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+					<Text text="{i18n>Phone}"/>
+				</Column>
+				<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+					<Text text="{i18n>IDNUMBER}"/>
+				</Column>
+					<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+					<Text text="{i18n>action}"/>
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem >
+					<cells>
+					<Input value="{oVisitorModel>Name}"></Input>
+					<Input value="{oVisitorModel>Email}"></Input>
+					<Input value="{oVisitorModel>Contact}"></Input>
+					<Input value="{oVisitorModel>IdNumber}"></Input>
+					<Button icon="sap-icon://delete" type="Reject" press="onVisCancel"></Button>
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+			</HBox>
+		</content>
+		<beginButton>
+			<Button text="{i18n>contnue}" type="Ghost" press="onContinue"/>
+		</beginButton>
+		<endButton>
+			<Button text="{i18n>Cancel}" type="Reject" press="onCancel"/>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>

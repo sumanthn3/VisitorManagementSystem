@@ -1,0 +1,17 @@
+<core:FragmentDefinition xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core" xmlns="sap.m">
+	<Dialog title="Enter Otp" draggable="true" verticalScrolling="true" class="sapUiSizeCompact AddDialog" resizable="true"
+		contentWidth="25rem" titleAlignment="Center">
+		<content>
+		<Label text="Enter the otp from email:" class="otp" ></Label>
+		<Input id="otp"  width="47%" class="otp"></Input>
+		<Input editable="false" id="timer" width="85%" class="otp" value=""/>
+		 <Image height="50%" width="50%" src="./image/lock.gif" class="bowimage"></Image>
+		</content>
+		<beginButton>
+			<Button text="Verify" type="Accept" press="onVerifyOtp"/>
+		</beginButton>
+		<endButton>
+			<Button text="{i18n>Cancel}" type="Reject" press="onCancelOtp"/>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>

@@ -1,0 +1,50 @@
+<mvc:View controllerName="inc.inkthn.neo.NEO_VMS.controller.Security" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" 	xmlns:f="sap.f"
+	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns:tnt="sap.tnt">
+	<tnt:ToolPage id="ToolPage">
+		<tnt:header >
+	
+			<f:ShellBar
+			
+				showMenuButton="true"
+				homeIcon="./image/inclogo.png"
+				showNotifications="true"
+				menuButtonPressed=".onSideNavButtonPress"
+				notificationsNumber="{oSecurityModel>/NotifCount}"  notificationsPressed="onNotificationPopover" class="shellbar">
+			
+				<f:profile>
+					<f:Avatar src="data:image/png;base64,{oSecurityModel>/image}" displaySize="XS" imageFitType="Cover" press="onProfile" />
+				</f:profile>
+			
+			</f:ShellBar>
+	</tnt:header>
+		<tnt:sideContent>
+			<tnt:SideNavigation class="masterpage" expanded="true" itemSelect=".onItemSelect">
+				<tnt:NavigationList id="navlist" items="{path: 'oGlobalModel>/SecurityMasterDetails'}">
+					<tnt:NavigationListItem text="{oGlobalModel>title}" icon="{oGlobalModel>icon}" expanded="{oGlobalModel>expanded}" key="{oGlobalModel>key}"></tnt:NavigationListItem>
+				</tnt:NavigationList>
+			</tnt:SideNavigation>
+		</tnt:sideContent>
+		<tnt:mainContents>
+			<NavContainer id="detailContainer" initialPage="securityDash">
+				<pages>
+					<ScrollContainer id="securityDash" horizontal="false" vertical="true" height="100%">
+						<core:Fragment fragmentName="inc.inkthn.neo.NEO_VMS.fragments.Security.SecurityDetailDash" type="XML"></core:Fragment>
+					</ScrollContainer>
+					<ScrollContainer id="securityParking" horizontal="false" vertical="true" height="100%">
+					<core:Fragment fragmentName="inc.inkthn.neo.NEO_VMS.fragments.Security.SecurityParking" type="XML"></core:Fragment>
+					</ScrollContainer>
+					<ScrollContainer id="securityDelivery" horizontal="false" vertical="true" height="100%">
+						<core:Fragment fragmentName="inc.inkthn.neo.NEO_VMS.fragments.Security.SecurityDelivery" type="XML"></core:Fragment>
+					</ScrollContainer>
+					<ScrollContainer id="securityEvacuation" horizontal="false" vertical="true" height="100%">
+						<core:Fragment fragmentName="inc.inkthn.neo.NEO_VMS.fragments.Security.SecurityEvacuation" type="XML"></core:Fragment>
+					</ScrollContainer>
+					<ScrollContainer id="securityTodayLog" horizontal="false" vertical="true" height="100%">
+						<core:Fragment fragmentName="inc.inkthn.neo.NEO_VMS.fragments.Security.SecurityTodayLog" type="XML"></core:Fragment>
+					</ScrollContainer>
+					
+				</pages>
+			</NavContainer>
+		</tnt:mainContents>
+	</tnt:ToolPage>
+</mvc:View>

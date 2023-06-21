@@ -1,0 +1,12 @@
+<core:FragmentDefinition xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core" xmlns="sap.m">
+	<Dialog title="Registration successful" draggable="true" verticalScrolling="true" class="sapUiSizeCompact AddDialog" resizable="true"
+		contentWidth="20rem" titleAlignment="Center">
+		<content>
+		  <Image height="100%" width="100%" src="./image/Success.gif"></Image>
+		  <Text text="Please wait in the Lobby for Meeting Approval" class="success" textAlign="Center"></Text>
+		</content>
+		<beginButton>
+			<Button text="Ok" type="Accept" press="onOk"/>
+		</beginButton>
+	</Dialog>
+</core:FragmentDefinition>

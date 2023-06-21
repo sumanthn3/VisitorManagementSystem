@@ -1,0 +1,686 @@
+
+/*LANDING PAGE*/
+
+.main {
+    background-image: url('../image/inctureMain.jpg');
+    background-size: cover;
+}
+/*background: #354a5f;*/
+.landingheader.sapMIBar.sapMHeader-CTX {
+    background: #0f7ad6;
+}
+
+.card {
+    margin-top: 20%;
+    border-radius: 1.25rem;
+}
+
+.cardtrans.sapFCard {
+    background: #fff0;
+    box-shadow: 0 0 0 0rem rgba(0, 0, 0, 0), 0 0rem 0rem 0 rgba(0, 0, 0, 0);
+    border-radius: 0rem;
+}
+
+.card.sapFCard {
+    background: #0f253cab;
+    box-shadow: 0 0 0 0.0625rem rgba(0, 0, 0, 0.1), 0 0.125rem 0.5rem 0 rgba(0, 0, 0, 0.1);
+    border-radius: 0.5rem;
+    border: .0625rem solid transparent;
+    
+}
+
+.card.sapFCard .sapFCardHeader {
+    position: relative;
+    flex-shrink: 0;
+    background: #0f7ad6;
+    border-bottom: 0rem;
+    box-shadow: 0 0 0.25rem 0 #234a71, inset 0 -0.0625rem 0 0 #d9d9d9;
+    z-index: 2;
+    border-radius: 0.5rem;
+    height: 15%;
+    padding-bottom: 0rem;
+    display: flex;
+    outline: none;
+    border-bottom-left-radius: 0rem;
+    border-bottom-right-radius: 0rem;
+}
+
+.card.sapFCard .sapFCardHeader .sapFCardHeaderText .sapFCardTitle {
+    min-width: 0;
+    display: block;
+    font-family: roboto, sans-serif;
+    font-size: 1.4rem;
+    font-weight: bolder;
+    color: 	#ffffff;
+    min-height: 1rem;
+    position: relative;
+    padding-right: 0.5rem;
+    padding-bottom: 0.8rem;
+    padding-left: 2rem;
+}
+
+.card .sapMInputBaseContentWrapper {
+    border: .0625rem solid #89919a;
+    background: #fff;
+    border-radius: 1rem;
+}
+
+.LandingInputBox {
+    border-radius: 0.5rem;
+    margin-left: 10%;
+}
+
+.LandingLabelInputBox {
+    margin-left: 10%;
+    width: 50%;
+}
+
+.LandingButton {
+    margin-left: 10%;
+    /*margin-right:8%;*/
+}
+
+.LandingLogo {
+    margin-left: 1.5rem !important;
+}
+.otp{
+	margin-left:5% !important;
+	margin-top:5% !important;
+	margin-bottom:1% !important;
+}
+.bowimage{
+	margin-left:25% !important;
+	margin-top:3% !important;
+}
+.feedback{
+	margin-left:20% !important;
+}
+.icontab{
+	font-size:1rem;
+}
+.checkOutbtn{
+	margin-left:35% !important;
+}
+.PasswordShow{
+	margin-top: 17%;
+    margin-left: 35%;
+}
+.PasswordVbox{
+margin-left: 20%;
+}
+/*Host Master Page*/
+.sapTntNavLIGroup {
+	border-color: #e5e5e500;
+    border-bottom: 1px solid ;
+}
+.sapTntNavLICollapsed .sapTntNavLIGroup {
+    border-color: #e5e5e500;
+}
+.sapTntToolHeader .sapMText, .sapTntToolHeader .sapMTitle, .sapTntToolHeader .sapMLabel {
+    color: #fff;
+    font-size: larger;
+}
+/*.sapTntToolHeader.sapMTB {*/
+/*    background-color: #e5e5e5 !important;*/
+/*    box-shadow: inset 0 -0.0625rem 0 0 #e5e5e5 !important;*/
+/*}*/
+.sapTntToolHeader .sapMBtn .sapMBtnTransparent .sapUiIcon, .sapTntToolHeader .sapMBtn .sapMBtnDefault .sapUiIcon, .sapTntToolHeader .sapMBtn .sapMBtnBack .sapUiIcon, .sapTntToolHeader .sapMBtn .sapMBtnUp .sapUiIcon {
+        font-size: large
+}
+/*.sapTntToolHeader .sapMText, .sapTntToolHeader .sapMTitle, .sapTntToolHeader .sapMLabel {*/
+/*    color: #354a5f !important;*/
+/*}*/
+.sapMTableTH {
+    background: #d1e8ff;
+    border-bottom: 1px solid #e5e5e5;
+    vertical-align: middle;
+}
+.masterpage .sapTntNavLI li,
+.sapTntNavLIItem {
+    position: relative;
+    height: 3rem;
+}
+.masterpage .sapMText {
+    display: inline-block;
+    box-sizing: border-box;
+    white-space: pre-line;
+    word-wrap: break-word;
+    cursor: text;
+    font-size: .875rem;
+    font-family: roboto,sans-serif;
+    font-weight: bolder;
+    line-height: normal;
+    color: #32363a;
+}
+.sapUiTableHeaderRow {
+    background-color: #d1e8ff !important;
+}
+
+.masterpage .sapTntNavLI span.sapTntNavLIGroupIcon {
+    font-size: x-large;
+}
+
+.masterpage.sapTntSideNavigation {
+    background: #0f7ad62b;
+}
+
+.masterpage .sapTntNavLIText {
+    width: 100%;
+    display: block;
+    font-size: large;
+    font-family: roboto, sans-serif;
+}
+
+.masterpage .sapTntNavLIItem {
+    background: #354a5f00;
+}
+
+.masterpage .sapTntNavLIItemSelected.sapTntNavLIItem,
+.sapTntNavLIItemSelected .sapTntNavLIGroup,
+.sapTntNavLIItemSelected.sapTntNavLIGroupItem.sapTntNavLIGroupItem {
+    background-color: #3a8ee3;
+}
+
+.masterpage .sapTntNavLIItem:not(.sapTntNavLIItemDisabled):hover {
+    background-color: #d1e8ff;
+}
+
+.masterpage .sapTntNavLIItem .sapUiIcon {
+    color:#32363a;
+}
+
+.masterpage .sapTntNavLIItem .sapMText {
+    color: #32363a;
+    font-family: roboto, sans-serif;
+   font-weight: 500;
+}
+
+.headername.sapMIBar.sapMTB .sapMBarChild {
+    margin-left: 4rem;
+}
+
+.headermiddle {
+    position: inherit;
+    width: 354px;
+}
+
+.tilehbox {
+    margin-left: -1rem;
+}
+
+.tileLayout {
+    /*height: 60% !important;*/
+    background: #d1e8ff;
+    
+    
+    text-align: center;
+}
+
+.tileLayout .sapMTileCntContent {
+    height: 3.875rem;
+    margin-bottom: 0.25rem;
+     
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.tileLayout.sapMGT.OneByOne {
+    width: 15rem;
+    height: 6rem;
+}
+
+.tileLayout .sapMGTHdrContent {
+    height: 1.2rem;
+    /*padding-top: 1rem;*/
+    /*padding-left: 1rem;*/
+    /*padding-right: 1rem;*/
+}
+
+.tileLayout .sapUiIcon {
+    text-align: center;
+    display: inline-block;
+    font-size: 2rem;
+}
+
+.tileLayout .sapMGTHdrTxt>.sapMText {
+    color: #32363a;
+    font-weight: normal;
+    font-family: roboto, sans-serif;
+    font-size: 1.4rem;
+}
+.tileCount .sapMNCIconImage {
+	margin-left:4rem;
+    margin-right:1rem;
+        margin-top: 0.4rem;
+    font-size: 1.75rem;
+    font-weight: normal;
+    color: #32363a;
+}
+.tileCount .sapMNCValue {
+
+    font-size: 2.25rem;
+    font-family: roboto, sans-serif;
+    font-weight: normal;
+    color: #32363a;
+}
+.date {
+    margin-left: 2.5%;
+    margin-top: 1%;
+}
+.donut{
+	margin-left: 10%;
+	margin-top: 3%;
+}    
+.Microchart{
+		margin-left: 10%;
+}
+.datelabel {
+    margin-left: 5%;
+    margin-top: 50%;
+}
+.dateReport{
+	 margin-top: 17%;
+	 margin-right:5%;
+	 font-style:bold !important;
+	 font-size:1rem;
+}
+
+.TileStyle {
+    margin-top: 2%;
+}
+
+.AddDialog.sapMPopup-CTX .sapMIBar.sapMHeader-CTX {
+    background: #0f7ad6;
+    filter: none;
+}
+
+.AddDialog.sapMDialog>header.sapMDialogTitle .sapMTitle {
+    color: #f7f7f7;
+}
+
+.InputBox {
+    width: 100% !important;
+}
+
+.MeetInputBox {
+    width: 100% !important;
+}
+
+.TilePress{
+	 background: #3a8ee3;
+}
+
+.acptMeet{
+	margin-top: 0.7rem !important;
+	margin-left: 2.5rem !important;
+}
+
+
+html.sap-desktop .sapMGT:hover:not(.sapMGTPressActive):not(.sapMGTBackgroundImage) {
+    background: rgb(00, 135, 213);
+}
+
+
+/*Visitor Page */
+.Existing{
+	margin-top:5%;
+margin-left:10%;
+}
+
+.Existing .sapMPanelBGTranslucent {
+    background-color: #ffffff;
+}
+.Existing .sapMLabel {
+    color: #030303;
+    font-size: 1rem;
+    font-weight: Bold;
+    font-family: roboto,sans-serif;
+}
+.Existing .sapUiForm .sapUiFormTitle {
+    border-width: 1px;
+    border-color: #030303;
+     color:#030303;
+     font-size: 1.3rem;
+     font-weight: Bold;
+    font-family: roboto,sans-serif;
+    height: 2.75rem;
+    line-height: 2.75rem;
+}
+.Existing .sapMTitle{
+	color: #030303;
+	font-family: roboto,sans-serif;
+
+}
+.Existing .sapMTB {
+    height: 2.75rem;
+    padding: 0 0.5rem 0 0.25rem;
+    background: #354a5f00;
+}
+.Existing .sapMBtnIcon{
+		color: #f7f7f7;
+}
+.Existing .sapMInputBaseInner {
+    background: #e5e5e5;
+    border: none;
+}
+
+.visitor{
+	margin-left:10%;
+}
+
+.visitorBackground {
+	background-image: url('../image/VisitorForm.jpg');
+    background-size: cover;
+}
+.visitor .sapMPanelBGTranslucent {
+    background-color: #ffffff;
+}
+.visitor .sapMLabel {
+    color: #030303;
+    font-size: 1rem;
+    font-weight: Bold;
+    font-family: roboto,sans-serif;
+}
+.visitor .sapUiForm .sapUiFormTitle {
+    border-width: 1px;
+    border-color: #030303;
+     color:#030303;
+     font-size: 1.3rem;
+     font-weight: Bold;
+    font-family: roboto,sans-serif;
+    height: 2.75rem;
+    line-height: 2.75rem;
+}
+.visitor .sapMTitle{
+	color: #ffffff;
+    font-family: roboto,sans-serif;
+    font-weight: bold;
+}
+.visitor .sapMTB {
+    height: 2.75rem;
+    padding: 0 0.5rem 0 0.25rem;
+    background: #354a5f00;
+}
+.visitor .sapMBtnIcon{
+		color: #f7f7f7;
+}
+.visitor .sapMInputBaseInner {
+    background: #e5e5e5;
+    border: none;
+}
+.visitorBackground .sapMPageFooter .sapMTB.sapMIBar {
+    right: 0;
+    border-bottom-width: 0;
+    border-top-color: #ffffff00;
+    background-color: #354a5f47;
+}
+.success.sapMText {
+    display: inline-block;
+    box-sizing: border-box;
+    white-space: pre-line;
+    word-wrap: break-word;
+    cursor: text;
+    font-size: .875rem;
+    font-family: roboto,sans-serif;
+    font-weight: bold;
+    line-height: normal;
+    color: #32363a;
+	margin-left:2%;
+	margin-bottom:5%;
+}
+.exitSuccess.sapMText {
+    display: inline-block;
+    box-sizing: border-box;
+    white-space: pre-line;
+    word-wrap: break-word;
+    cursor: text;
+    font-size: .875rem;
+    font-family: roboto,sans-serif;
+    font-weight: bold;
+    line-height: normal;
+    color: #32363a;
+	margin-left: 7rem;
+	margin-bottom:5%;
+} 
+.Extoolbar .sapMTB {
+    height: 2.75rem;
+    padding: 0 0.5rem 0 0.25rem;
+    background: #e2e7ec00 !important;
+}
+.checkHBox{
+    margin-left: 2%;
+    margin-top: 3%;
+}
+.termsText1{
+	font-size: 1rem;
+    font-family: roboto,sans-serif;
+    margin-top: 0.8rem;
+    color: #1e1e1f;
+    font-weight: bold;
+
+}
+.termsText2{
+	font-size: 1rem;
+    margin-top: 0.8rem;
+    margin-left: 0.4rem;
+    font-weight: bold;
+    font-family: roboto, sans-serif;
+    
+}
+.termsText2.sapMLnk:visited {
+	color: #007bf5 !important;
+	font-family: roboto, sans-serif;
+}
+.Visitortable.sapMTitle{
+	color: #32363a;
+	font-family: roboto,sans-serif;
+}
+/*Profile*/
+
+.editProfile{
+	margin-left:10%;
+}
+.editProfilePic{
+ margin-left:5%;
+ margin-top:5%;
+}
+.Badge.sapMLabel {
+    color: #3c4b5a;
+    font-size: 1rem;
+    font-family: roboto, sans-serif;
+    font-weight: 600;
+    display: inline-block;
+    white-space: nowrap;
+    cursor: text;
+    overflow: hidden;
+}
+.BadgeText.sapMText {
+    color: #3c4b5a;
+    font-size: 1rem;
+   font-family: roboto, sans-serif;
+    font-weight: 600;
+    display: inline-block;
+    white-space: nowrap;
+    cursor: text;
+   
+    overflow: hidden;
+}
+.PBadgeMargin.sapMText {
+    color: #3c4b5a;
+    font-size: 1rem;
+   font-family: roboto, sans-serif;
+    font-weight: 600;
+    display: inline-block;
+    white-space: nowrap;
+    cursor: text;
+    overflow: hidden;
+    margin-left:1.7rem;
+}
+.HBadgeMargin.sapMText {
+    color: #3c4b5a;
+    font-size: 1rem;
+   font-family: roboto, sans-serif;
+    font-weight: 600;
+    display: inline-block;
+    white-space: nowrap;
+    cursor: text;
+    overflow: hidden;
+     margin-left:3.45rem;
+}
+.RBadgeMargin.sapMText {
+    color: #3c4b5a;
+    font-size: 1rem;
+   font-family: roboto, sans-serif;
+    font-weight: 600;
+    display: inline-block;
+    white-space: nowrap;
+    cursor: text;
+    overflow: hidden;
+     margin-left:2.85rem;
+}
+.BadgeQR{
+	margin-left: 1.3rem !important;
+}
+.badgehead .sapMHdrCntrBGTransparent {
+    background-color:#0f7ad6;
+}
+.shellbar.sapFShellBar {
+    background: #0f7ad6;
+    height: 2.75rem;
+    box-shadow: inset 0 -0.0625rem 0 0 #f5f5f5;
+}
+.shellbar.sapFShellBar .sapFShellBarOLHB, .sapFShellBar .sapFShellBarORHB {
+    margin-right: 0;
+    margin-left: -2rem;
+    display: inline-flex;
+    vertical-align: top;
+    box-sizing: border-box;
+    align-items: center;
+    min-width: 1px;
+    max-width: 100%;
+    height: 100%;
+}
+.shellbar.sapFShellBar .sapFShellBarHomeIcon {
+    height: 2.4rem;
+    vertical-align: middle;
+}
+
+.shellbar.sapFShellBar .sapFShellBarProfile {
+    user-select: none;
+    -ms-user-select: none;
+    margin-left: 1rem;
+    margin-right: -2rem;
+}
+
+.notifPopover{
+	position: absolute;
+    visibility: visible;
+    z-index: 110;
+    display: block;
+    top: 45px !important;
+    bottom: 10px;
+    right: 10px;
+    overflow: hidden !important;
+}
+.notifPopover.sapMPopover {
+    position: absolute;
+    color: #32363a;
+    min-width: 6.25rem;
+    box-sizing: border-box;
+    outline: none;
+    max-width: 30% !important;
+    max-height: 100%;
+    overflow: hidden;
+    background: #f7f7f7;
+    border: none;
+    box-shadow: 0 0 0 0.0625rem rgba(0,0,0,0.42), 0 0.625rem 1.875rem 0 rgba(0,0,0,0.3);
+    border-radius: 0.25rem;
+    min-height: 2rem;
+    margin-left: 66rem;
+}
+.ProfileName .sapMText {
+    font-size: 1rem !important;
+    line-height: normal;
+    color: #2a5e92 !important;
+    margin-left: 0.7rem !important;
+    margin-top: 0.7rem !important;
+    margin-bottom: 0.7rem !important;
+     margin-right: 0.7rem !important;
+     font-family: roboto, sans-serif !important;
+}
+.PopImage .sapFAvatarImage {
+    text-align: center;
+    background-color: transparent;
+    margin-top: 0.5rem;
+    margin-left: 4.5rem;
+}
+
+/*.ProfileBtns .sapMOTAPopover .sapMBtn .sapMBtnInner {*/
+    
+/*}*/
+.ProfileBtns .sapMBtn .sapMBtnInner {
+    /*display: inline-block;*/
+    justify-content: Center;
+    border-radius: 1.25rem;
+}
+.ProfileBtns.sapMOTAPopover.sapMPopover .sapMPopoverCont .sapMPopoverScroll>button.sapMBtn {
+    width: 80% !important;
+    max-width: 100% !important;
+    margin-left: 10%;
+    margin-bottom: 2%;
+}
+.TableTitle.sapMTitle {
+    position: relative;
+    display: inline-block;
+    margin: 0;
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+    -webkit-margin-start: 0;
+    -webkit-margin-end: 0;
+    font-weight: normal;
+    color: #32363a;
+    font-family: roboto,sans-serif;
+    font-weight: bold;
+    box-sizing: border-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: text;
+    text-shadow: none;
+}
+.sapMListTbl .sapMText, .sapMListTbl .sapMLabel {
+    font-size: .875rem;
+    color: #32363a;
+    font-weight: bold;
+    font-family: roboto,sans-serif;
+}
+.blacklistBtn{
+	margin-left: 3.25rem !important;
+}
+.blacklistText{
+	margin-left: 2rem !important;
+} 
+.blacklistBtnT{
+    margin-left: 6rem !important;
+}
+.blacklistTextT{
+	margin-left: 4.5rem !important;
+} 
+.PreRegButton{
+    margin-left: 3.5rem !important;	
+}
+.frequentBar.sapSuiteIBCBar {
+    background-color: #e88509 !important;
+}
+.blacklistBar.sapSuiteIBCBar {
+    background-color: #c91d1d !important;
+}
+.othersBar.sapSuiteIBCBar {
+    background-color: #0f9007 !important;
+}
+
+
+html.sap-desktop .sapMCb:not(.sapMCbBgDis):not(.sapMCbHasLabel):focus>.sapMCbBg {
+    outline-width: 1px;
+    outline-style: unset;
+    outline-color: #32363a;
+}

@@ -1,0 +1,44 @@
+<core:FragmentDefinition xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core" xmlns="sap.m"
+	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+
+	<Table id="HostBlacklistedVisitor" inset="true" items="{ path: 'oHostModel>/GetBlacklisted'}" alternateRowColors="true" >
+		<headerToolbar>
+			<OverflowToolbar>
+				<content>
+					<Title text="Blacklisted Visitor" class="TableTitle" level="H3"/>
+					<ToolbarSpacer></ToolbarSpacer>
+				
+					<Button icon="sap-icon://synchronize" tooltip="Refresh" press="onRefreshBlacklist"></Button>
+				</content>
+			</OverflowToolbar>
+		</headerToolbar>
+		<columns>
+			<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+				<Text text="{i18n>name}"/>
+			</Column>
+			<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+				<Text text="{i18n>Contact}"/>
+			</Column>
+			<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+				<Text text="{i18n>Email}"/>
+			</Column>
+			<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+				<Text text="{i18n>reason}"/>
+			</Column>
+			<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+				<Text text="{i18n>action}"/>
+			</Column>
+		</columns>
+		<items>
+			<ColumnListItem >
+				<cells>
+					<Text text="{oHostModel>name}"></Text>
+					<Text text="{oHostModel>contactNo}"></Text>
+					<Text text="{oHostModel>email}"></Text>
+					<Text text="{oHostModel>reason}"></Text>
+					<Button text="Remove" type="Transparent" press="onRemoveBlacklist"></Button>			
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+</core:FragmentDefinition>

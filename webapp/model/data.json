@@ -1,0 +1,154 @@
+{
+	"Details": [{
+			"Meeting Id": "1111",
+			"Name": "Varun V",
+
+			"Contact Number": "9577230145",
+			"Organisation": "Incture Technologies",
+			"Time": "10:15",
+			"Purpose": "Project Meeting",
+			"Status": "CheckedIn"
+
+		}, {
+			"Meeting Id": "1112",
+			"Name": "Sumanth Nandeti",
+			"Contact Number": "8875210145",
+			"Organisation": "G V P",
+			"Time": "12:30",
+			"Purpose": "Client Visit",
+			"Status": "CheckedIn"
+
+		}, {
+			"Meeting Id": "1113",
+			"Name": "Arijeet",
+			"Contact Number": "9523469805",
+			"Organisation": "KIIT",
+			"Time": "16:15",
+			"Purpose": "Interview",
+			"Status": "CheckedIn"
+
+		}
+
+	],
+	"SecurityMasterDetails" :[
+		 {
+            "title": "DashBoard",
+            "icon": "sap-icon://bbyd-dashboard",
+            "expanded": true,
+            "key": "securityDash"
+       
+        },
+         {
+            "title": "Today's Log",
+            "icon": "sap-icon://show",
+            "expanded": true,
+            "key": "securityTodayLog"
+       
+        },
+            {
+            "title": "Parking",
+            "icon": "sap-icon://car-rental",
+            "expanded": true,
+            "key": "securityParking"
+       
+        },
+            {
+            "title": "Delivery",
+            "icon": "sap-icon://shipping-status",
+            "expanded": true,
+            "key": "securityDelivery"
+       
+        },
+        
+            {
+            "title": "Evacuation",
+            "icon": "sap-icon://accidental-leave",
+            "expanded": true,
+            "key": "securityEvacuation"
+            }
+        ],
+	"HostMasterDetails" :[
+		 {
+            "title": "DashBoard",
+            "icon": "sap-icon://bbyd-dashboard",
+            "expanded": true,
+            "key": "hostDash"
+       
+        },
+            {
+            "title": "Pre-Registration",
+            "icon": "sap-icon://form",
+            "expanded": true,
+            "key": "hostPreRegistration"
+       
+        },
+            {
+            "title": "Blacklisted Visitors",
+            "icon": "sap-icon://sys-cancel",
+            "expanded": true,
+            "key": "hostBlacklist"
+       
+            },
+            {
+            "title": "Meetings",
+            "icon": "sap-icon://manager",
+            "expanded": true,
+            "key": "hostMeetingRequest"
+       
+            }
+        ],
+	"AdminMasterDetails" :[
+		 {
+            "title": "DashBoard",
+            "icon": "sap-icon://bbyd-dashboard",
+            "expanded": true,
+            "key": "adminDash",
+            "select":"AdminDashSelect"
+       
+        },
+            {
+            "title": "Reports",
+            "icon": "sap-icon://line-chart",
+            "expanded": true,
+            "key": "adminReport"
+       
+        },
+        
+        {
+            "title": "Pre-Registration",
+            "icon": "sap-icon://form",
+            "expanded": true,
+            "key": "adminPreRegistration"
+       
+        },
+            {
+            "title": "Meetings",
+            "icon": "sap-icon://travel-request",
+            "expanded": true,
+            "key": "adminRequest"
+       
+        },
+            {
+            "title": "Blacklisted Visitors",
+            "icon": "sap-icon://sys-cancel",
+            "expanded": true,
+            "key": "adminBlacklist"
+       
+        },
+            {
+            "title": "Evacuation",
+            "icon": "sap-icon://accidental-leave",
+            "expanded": true,
+            "key": "adminEvacuation"
+       
+        },
+        {
+            "title": "FeedBack",
+            "icon": "sap-icon://feedback",
+            "expanded": true,
+            "key": "adminFeedback"
+       
+        }
+        
+        ]
+}

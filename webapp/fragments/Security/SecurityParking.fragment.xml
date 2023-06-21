@@ -1,0 +1,66 @@
+<core:FragmentDefinition xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core" xmlns="sap.m"
+	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+
+	<l:VerticalLayout width="100%" class="TileStyle">
+		<l:Grid>
+			<l:content>
+				<GenericTile class="tileLayout sapUiMediumMarginBegin sapUiSmallMarginTop" id="onParkingTile" header="Available Parking Slots" press="onAvailableSlots">
+					<TileContent>
+						<NumericContent class="tileCount" icon="sap-icon://car-rental" value="{oSecurityModel>/NumOfParking}" withMargin="false" ></NumericContent>
+					
+					</TileContent>
+					<layoutData>
+						
+						<l:GridData span="XL3 L3 M6 S12"/>
+					</layoutData>
+				</GenericTile>
+
+				<GenericTile class="tileLayout sapUiMediumMarginBegin sapUiSmallMarginTop" header="Park Vehicle" press="onSpotRegister">
+					<TileContent >
+						<core:Icon src="sap-icon://insurance-car"></core:Icon>
+					</TileContent>
+					<layoutData>
+						<l:GridData span="XL3 L3 M6 S12"/>
+					</layoutData>
+				</GenericTile>
+			</l:content>
+		</l:Grid>
+	</l:VerticalLayout>
+		<Table id="idSecurityParking" inset="true" alternateRowColors="true" items="{path: 'oSecurityModel>/getParkingStatus'}" >
+		<headerToolbar>
+			<OverflowToolbar>
+				<content>
+					<Title text="Parked Vehicles" class="TableTitle" level="H3"/>
+					<ToolbarSpacer></ToolbarSpacer>
+					<Button icon="sap-icon://synchronize" tooltip="Refresh" press="onRefreshParking"></Button>
+				</content>
+			</OverflowToolbar>
+		</headerToolbar>
+		<columns>
+			<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+				<Text text="{i18n>vehicleNum}"/>
+			</Column>
+			<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+				<Text text="{i18n>vehtype}"/>
+			</Column>
+			<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+				<Text text="{i18n>slotNum}"/>
+			</Column>
+			<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+				<Text text="{i18n>backout}"/>
+			</Column>
+			
+		</columns>
+		<items>
+			<ColumnListItem >
+				<cells>
+					<Text text="{oSecurityModel>vehicleNo}"/>
+					<Text text="{oSecurityModel>parkingType} Wheeler"/>
+					<Text text="{oSecurityModel>pid}"/>
+					<Button icon="sap-icon://offsite-work" tooltip="BackOut Vehicle" press="onBackOut"></Button>
+				
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+</core:FragmentDefinition>

@@ -1,0 +1,48 @@
+<mvc:View controllerName="inc.inkthn.neo.NEO_VMS.controller.Admin" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+	xmlns:f="sap.f" xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns:tnt="sap.tnt">
+	<tnt:ToolPage id="ToolPage">
+		<tnt:header >
+			<f:ShellBar showMenuButton="true" homeIcon="./image/inclogo.png" showNotifications="true" menuButtonPressed=".onSideNavButtonPress"
+				notificationsNumber="{oAdminModel>/NotifCount}" notificationsPressed="onNotificationPopover" class="shellbar">
+				<f:profile>
+					<f:Avatar src="data:image/png;base64,{oAdminModel>/image}" displaySize="XS" imageFitType="Cover" press="onProfile"/>
+				</f:profile>
+			</f:ShellBar>
+		</tnt:header>
+		<tnt:sideContent>
+			<tnt:SideNavigation class="masterpage" expanded="true" itemSelect=".onItemSelect">
+				<tnt:NavigationList id="navlist" items="{path: 'oGlobalModel>/AdminMasterDetails'}">
+					<tnt:NavigationListItem text="{oGlobalModel>title}" icon="{oGlobalModel>icon}"   expanded="{oGlobalModel>expanded}" key="{oGlobalModel>key}"  ></tnt:NavigationListItem>
+				</tnt:NavigationList>
+			</tnt:SideNavigation>
+		</tnt:sideContent>
+		<tnt:mainContents>
+			<NavContainer id="detailContainer" initialPage="adminDash">
+				<pages>
+					<ScrollContainer id="adminDash" horizontal="false"  vertical="true" height="100%">
+						<core:Fragment fragmentName="inc.inkthn.neo.NEO_VMS.fragments.Admin.AdminDetailDash" type="XML"></core:Fragment>
+					</ScrollContainer>
+					<ScrollContainer id="adminReport" horizontal="false" vertical="true" height="100%">
+						<core:Fragment fragmentName="inc.inkthn.neo.NEO_VMS.fragments.Admin.AdminReport" type="XML"></core:Fragment>
+					</ScrollContainer>
+					<ScrollContainer id="adminPreRegistration" horizontal="false" vertical="true" height="100%">
+						<core:Fragment fragmentName="inc.inkthn.neo.NEO_VMS.fragments.Admin.AdminPreRegistration" type="XML"></core:Fragment>
+					</ScrollContainer>
+					<ScrollContainer id="adminRequest" horizontal="false" vertical="true" height="100%">
+						<core:Fragment fragmentName="inc.inkthn.neo.NEO_VMS.fragments.Admin.AdminRequest" type="XML"></core:Fragment>
+					</ScrollContainer>
+					<ScrollContainer id="adminBlacklist" horizontal="false" vertical="true" height="100%">
+						<core:Fragment fragmentName="inc.inkthn.neo.NEO_VMS.fragments.Admin.AdminBlacklist" type="XML"></core:Fragment>
+					</ScrollContainer>
+					<ScrollContainer id="adminEvacuation" horizontal="false" vertical="true" height="100%">
+						<core:Fragment fragmentName="inc.inkthn.neo.NEO_VMS.fragments.Admin.AdminEvacuation" type="XML"></core:Fragment>
+					</ScrollContainer>
+					<ScrollContainer id="adminFeedback" horizontal="false" vertical="true" height="100%">
+						<core:Fragment fragmentName="inc.inkthn.neo.NEO_VMS.fragments.Admin.AdminFeedback" type="XML"></core:Fragment>
+					</ScrollContainer>
+					
+				</pages>
+			</NavContainer>
+		</tnt:mainContents>
+	</tnt:ToolPage>
+</mvc:View>

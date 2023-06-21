@@ -1,0 +1,127 @@
+<core:FragmentDefinition xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core" xmlns="sap.m"
+	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+		<l:HorizontalLayout class="date">
+		<Label class="datelabel" text="Date:"/>
+		<DatePicker class="date" value="{oSecurityModel>/Date}" valueFormat="MMM dd, yyyy" change="onDateChange1" />
+	</l:HorizontalLayout>
+	<l:VerticalLayout width="100%" class="TileStyle">
+		<l:Grid>
+			<l:content>
+				<GenericTile class="tileLayout sapUiMediumMarginBegin sapUiSmallMarginTop" id="onCheckInTile" header="Checked In" press="onCheckedIn">
+					<TileContent>
+							<NumericContent class="tileCount" icon="sap-icon://trend-down" value="{oSecurityModel>/CheckedInCount}" withMargin="false" ></NumericContent>
+					
+					</TileContent>
+					<layoutData>
+						<l:GridData span="XL3 L3 M6 S12"/>
+					</layoutData>
+				</GenericTile>
+				<GenericTile class="tileLayout sapUiMediumMarginBegin sapUiSmallMarginTop" id="onCheckOutTile" header="Checked Out" press="onCheckedOut">
+					<TileContent >
+						<NumericContent class="tileCount" icon="sap-icon://trend-up" value="{oSecurityModel>/CheckedOutCount}" withMargin="false" ></NumericContent>
+					
+					</TileContent>
+					<layoutData>
+						<l:GridData span="XL3 L3 M6 S12"/>
+					</layoutData>
+				</GenericTile>
+				
+			</l:content>
+		</l:Grid>
+	</l:VerticalLayout>
+	<Table id="idSecurityCheckedIn" inset="true" items="{path: 'oSecurityModel>/CheckedIn'}" alternateRowColors="true" visible="{oViewModel>/CheckedInVisibility}">
+		<headerToolbar>
+			<OverflowToolbar>
+				<content>
+					<Title text="CheckedIn" class="TableTitle" level="H3"/>
+					<ToolbarSpacer></ToolbarSpacer>
+					<SearchField width="20%" placeholder="Search by Name" liveChange="onCheckedOutSearch" class="sapUiSmallMargin" />
+				</content>
+			</OverflowToolbar>
+		</headerToolbar>
+		<columns>
+		<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+				<Text text="{i18n>MeetId}"/>
+			</Column>
+			<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+				<Text text="{i18n>name}"/>
+			</Column>
+			<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+				<Text text="{i18n>Contact}"/>
+			</Column>
+			<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+				<Text text="{i18n>ORG}"/>
+			</Column>
+			<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+				<Text text="{i18n>Purpose}"/>
+			</Column>
+			<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+				<Text text="{i18n>Time}"/>
+			</Column>
+			<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+				<Text text="{i18n>accesscard}"/>
+			</Column>
+		</columns>
+		<items>
+			<ColumnListItem >
+				<cells>
+					<Text text="{oSecurityModel>mId}"/>
+					<Text text="{oSecurityModel>name}"/>
+					<Text text="{oSecurityModel>contactNo}"/>
+					<Text text="{oSecurityModel>organisation}"/>
+					<Text text="{oSecurityModel>purpose}"/>
+					<Text text="{oSecurityModel>checkedIn}"/>
+					<Button text="Show Card" press="getBadge"></Button>
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+	<Table id="idSecurityCheckedOut" inset="true" items="{path: 'oSecurityModel>/CheckedOut'}" alternateRowColors="true" visible="{oViewModel>/CheckedOutVisibility}">
+		<headerToolbar>
+			<OverflowToolbar>
+				<content>
+					<Title text="CheckedOut" class="TableTitle" level="H3"/>
+					<ToolbarSpacer></ToolbarSpacer>
+					<SearchField width="20%" placeholder="Search by Name" liveChange="onCheckedOutSearch" class="sapUiSmallMargin" />
+				</content>
+			</OverflowToolbar>
+		</headerToolbar>
+		<columns>
+			<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+				<Text text="{i18n>MeetId}"/>
+			</Column>
+			<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+				<Text text="{i18n>name}"/>
+			</Column>
+			<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+				<Text text="{i18n>Contact}"/>
+			</Column>
+			<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+				<Text text="{i18n>ORG}"/>
+			</Column>
+			<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+				<Text text="{i18n>Purpose}"/>
+			</Column>
+			<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+				<Text text="{i18n>visId}"/>
+			</Column>
+			<Column minScreenWidth="Medium" demandPopin="true" hAlign="Center">
+				<Text text="{i18n>Time}"/>
+			</Column>
+		</columns>
+		<items>
+			<ColumnListItem >
+				<cells>
+					<Text text="{oSecurityModel>mId}"/>
+					<Text text="{oSecurityModel>name}"/>
+					<Text text="{oSecurityModel>contactNo}"/>
+					<Text text="{oSecurityModel>organisation}"/>
+					<Text text="{oSecurityModel>purpose}"/>
+					<Text text="{oSecurityModel>vId}"/>
+					<Text text="{oSecurityModel>checkedOut}"/>
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+	
+</core:FragmentDefinition>

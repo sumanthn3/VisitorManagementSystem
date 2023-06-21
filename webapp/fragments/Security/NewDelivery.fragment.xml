@@ -1,0 +1,25 @@
+<core:FragmentDefinition xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core" xmlns="sap.m">
+	<Dialog title="{i18n>newDeliv}" draggable="true" verticalScrolling="true" class="sapUiSizeCompact AddDialog" resizable="true"
+		contentWidth="20rem" titleAlignment="Center">
+		<content>
+			<VBox>
+				<f:SimpleForm layout="ColumnLayout" editable="true" id="idSimpleFormAddDelivery">
+					<f:content>
+						<Label text="{i18n>Phne}"/>
+						<Input id="idEmpId" value="+91 " class="InputBox"/>
+						<Label text="{i18n>delivType}"/>
+						<ComboBox id="idDelivType" selectedKey="{oViewModel>/sSelect}" items="{oViewModel>/list}" class="InputBox">
+							<core:Item text="{oViewModel>Type}" key="{oViewModel>Value}"></core:Item>
+						</ComboBox>
+					</f:content>
+				</f:SimpleForm>
+			</VBox>
+		</content>
+		<beginButton>
+			<Button text="{i18n>notify}" type="Accept" press="onNotify"/>
+		</beginButton>
+		<endButton>
+			<Button text="{i18n>Cancel}" type="Reject" press="onCancel"/>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>
